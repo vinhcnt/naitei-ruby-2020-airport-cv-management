@@ -2,10 +2,18 @@
   "name": "naitei_ruby_2020_airport_cv_management",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "bootstrap": "4.3.1",
+    "i18n-js": "^3.7.1",
+    "jquery": "^3.5.1",
+    "jquery-nice-select": "^1.1.0",
+    "popper.js": "^1.16.1",
+    "rails-erb-loader": "^5.5.2",
+    "selectize": "^0.12.6",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

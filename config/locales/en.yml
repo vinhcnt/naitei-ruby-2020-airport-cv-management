@@ -1,33 +1,59 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  title: "Recruitment"
+  layouts:
+    header:
+      post_a_job: "Post a Job"
+      home: "Home"
+      employer: "Employer"
+      candidate: "Candidate"
+      contact: "Contact"
+    footer:
+      slogan: "Fly by your way"
+      company: "Company"
+      about_us: "About Us"
+      contact: "Contact"
+      faq: "FAQ"
+      language: "Language"
+      en: "English"
+      vi: "Tiếng Việt"
+      business_hours: "Business Hours"
+      business_hours_content: 
+        - "Monday - Friday : 9:00 to 17:00"
+        - "Saturday : 10:00 to 15:00"
+        - "Sunday : Day Off (Holiday)"
+  shared:
+    home_start:
+      sharing_words: "Start a new job with us right now."
+      greeting_words: "We are Tokyo Airport"
+    contact_form:
+      address: "Handico Tower, Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội"
+      contact_info: "Contact Info"
+      share: "Share"
+      email_address: "Email Address"
+      name: "Name"
+      subject: "Subject"
+      message: "Message"
+      submit: "Submit"
+    job:
+      apply_now: "Apply Now"
+    popular_category:
+      popular_category: "Popular Category"
+      browse_all_categories: "Browse All Categories"
+    jobs_list:
+      find_your_jobs: "Find Your Jobs"
+      recent_jobs: "Recent Jobs"
+      featured_jobs: "Featured Jobs"
+      part_time: "Part Time"
+      full_time: "Full Time"
+  static_pages:
+    home:
+      title: "Home"
+    contact:
+      title: "Contact"
+    help:
+      title: "FAQ"
+    content:
+      - question: "Where am I?"
+        answer: "You are on the Tokyo Airport recruitment page."
+      - question: "Who should I send CV to?"
+        answer: "Create your CV right on this website and send your request to us."

@@ -1,0 +1,108 @@
+ <!-- all jobs start -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="section-title text-center mb-4 pb-2">
+          <h4 class="title title-line pb-5"><%= t ".find_your_jobs" %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9 text-center mt-4 pt-2">
+        <ul class="nav nav-pills nav nav-pills bg-white rounded nav-justified flex-column flex-sm-row" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <%= link_to "#recent-job", class: "nav-link rounded active", id: "recent-job-tab", "data-toggle": "pill", role: "tab", "aria-controls": "recent-job", "aria-selected": true do %>
+              <%= t ".recent_jobs" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#featured-job-tab", class: "nav-link rounded", id: "featured-job-tab", "data-toggle": "pill", role: "tab", "aria-controls": "featured-job-tab", "aria-selected": false do %>
+              <%= t ".featured_jobs" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#part-job-tab", class: "nav-link rounded", id: "part-job-tab", "data-toggle": "pill", role: "tab", "aria-controls": "part-job-tab", "aria-selected": false do %>
+              <%= t ".part_time" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#part-job", class: "nav-link rounded", id: "part-job-tab", "data-toggle": "pill", role: "tab", "aria-controls": "part-job", "aria-selected": false do %>
+              <%= t ".full_time" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="tab-content mt-2" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="recent-job" role="tabpanel" aria-labelledby="recent-job-tab">
+            <div class="row">
+              <div class="col-lg-12">
+                <% 4.times do %>
+                  <%= render "shared/job" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="featured-job" role="tabpanel" aria-labelledby="featured-job-tab">
+            <div class="row">
+              <div class="col-lg-12">
+                <% 4.times do %>
+                  <%= render "shared/job" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="part-job" role="tabpanel" aria-labelledby="part-job-tab">
+            <div class="row">
+              <div class="col-lg-12">
+                <% 4.times do %>
+                  <%= render "shared/job" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="full-job" role="tabpanel" aria-labelledby="full-job-tab">
+            <div class="row">
+              <div class="col-lg-12">
+                <% 4.times do %>
+                  <%= render "shared/job" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+    <!-- end row -->
+    <div class="row">
+      <div class="col-lg-12 mt-4 pt-2">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination job-pagination mb-0 justify-content-center">
+            <li class="page-item disabled">
+              <%= link_to Settings.empty_path, class: "page-link", tabindex: "-1", "aria-disabled": true do %>
+                <i class="fa fa-chevron-left f-15"></i>
+              <% end %>
+            </li>
+            <li class="page-item active">
+              <%= link_to "1", Settings.empty_path, class: "page-link" %>
+            </li>
+            <li class="page-item">
+              <%= link_to "2", Settings.empty_path, class: "page-link" %>
+            </li>
+            <li class="page-item">
+              <%= link_to Settings.empty_path, class: "page-link" do %>
+                <i class="fa fa-chevron-right f-15"></i>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- end containar -->
+</section>
+<!-- all jobs end -->

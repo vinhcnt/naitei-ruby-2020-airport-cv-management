@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="section-title text-center mb-4 pb-2">
+          <h4 class="title title-line pb-5"><%= t ".popular_category" %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <% 8.times do %>
+        <%= render "shared/category" %>
+      <% end %>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mt-4 pt-2">
+        <%= link_to t(".browse_all_categories"), Settings.empty_path, class: "btn btn-primary-outline" %>
+      </div>
+    </div>
+  </div>
+</section>
