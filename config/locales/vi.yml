@@ -1,0 +1,59 @@
+vi:
+  title: "Tuyển dụng"
+  layouts:
+    header:
+      post_a_job: "Đăng việc"
+      home: "Trang chủ"
+      employer: "Nhà tuyển dụng"
+      candidate: "Ứng viên"
+      contact: "Liên hệ"
+    footer:
+      slogan: "Hãy bay theo cách của bạn"
+      company: "Doang nghiệp"
+      about_us: "Giới thiệu"
+      contact: "Liên hệ"
+      faq: "FAQ"
+      language: "Ngôn ngữ"
+      en: "English"
+      vi: "Tiếng Việt"
+      business_hours: "Giờ làm việc"
+      business_hours_content: 
+        - "T2 - T6 : 9:00 ~ 17:00"
+        - "T7 : 10:00 ~ 15:00"
+        - "CN : Nghỉ"
+  shared:
+    home_start:
+      sharing_words: "Hãy bắt đầu một cơ hội mới với chùng tôi."
+      greeting_words: "Tokyo Airport"
+    contact_form:
+      address: "Handico Tower, Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội"
+      contact_info: "Contact Info"
+      share: "Share"
+      email_address: "Email"
+      name: "Tên"
+      subject: "Đề mục"
+      message: "Nội dung"
+      submit: "Gửi"
+    job:
+      apply_now: "Gửi hồ sơ"
+    popular_category:
+      popular_category: "Công việc"
+      browse_all_categories: "Tải thêm"
+    jobs_list:
+      find_your_jobs: "Tìm công việc dành cho bạn"
+      recent_jobs: "Mới"
+      featured_jobs: "Nổi bật"
+      part_time: "Bán thời gian"
+      full_time: "Toàn thời gian"
+  static_pages:
+    home:
+      title: "Trang chủ"
+    contact:
+      title: "Liên hệ"
+    help:
+      title: "Thắc mắc thường gặp"
+      content:
+        - question: "Đây là trang web gì?"
+          answer: "Bạn đang ở trang tuyển dụng của Tokyo Airport."
+        - question: "Tôi phải gửi CV tới ai?"
+          answer: "Hãy tạo CV ngay trên trang web này và gửi yêu cầu đến chúng tôi."

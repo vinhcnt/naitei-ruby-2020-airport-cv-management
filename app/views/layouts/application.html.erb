@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NaiteiRuby2020AirportCvManagement</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= full_title yield(:title) %></title>
+    <%= render "layouts/rails_default" %>
+    <%= render "layouts/shim" %>
+    <%= render "layouts/i18n" %>
   </head>
 
   <body>
+    <%= render "layouts/preloader"%>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
+    <%= render "layouts/back_to_top" %>
+
+    <%= javascript_pack_tag "shared/plugins" %>
+    <%= javascript_pack_tag "shared/app" %>
   </body>
 </html>

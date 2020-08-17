@@ -87,3 +87,7 @@ build-iPhoneSimulator/
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+spec
+!spec/rails_helper.rb
+!spes/spec_helper.rb
