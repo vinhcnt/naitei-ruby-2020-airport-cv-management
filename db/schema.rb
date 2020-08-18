@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_020105) do
+ActiveRecord::Schema.define(version: 2020_08_21_064444) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
@@ -21,13 +21,14 @@ ActiveRecord::Schema.define(version: 2020_08_19_020105) do
   create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "college"
     t.string "major"
-    t.date "graduation"
+    t.date "date_from"
+    t.date "date_to"
     t.text "certification"
     t.text "additional_information"
-    t.bigint "user_id", null: false
+    t.bigint "profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_educations_on_user_id"
+    t.index ["profile_id"], name: "index_educations_on_profile_id"
   end
 
   create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -36,10 +37,10 @@ ActiveRecord::Schema.define(version: 2020_08_19_020105) do
     t.date "date_from"
     t.date "date_to"
     t.text "additional_information"
-    t.bigint "user_id", null: false
+    t.bigint "profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_experiences_on_user_id"
+    t.index ["profile_id"], name: "index_experiences_on_profile_id"
   end
 
   create_table "genders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -100,6 +101,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_020105) do
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.text "introduction"
     t.date "date_of_birth"
     t.bigint "gender_id", null: false
     t.text "address"
@@ -140,11 +142,13 @@ ActiveRecord::Schema.define(version: 2020_08_19_020105) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.bigint "unit_id"
     t.index ["role_id"], name: "index_users_on_role_id"
+    t.index ["unit_id"], name: "index_users_on_unit_id"
   end
 
-  add_foreign_key "educations", "users"
-  add_foreign_key "experiences", "users"
+  add_foreign_key "educations", "profiles"
+  add_foreign_key "experiences", "profiles"
   add_foreign_key "job_applications", "job_application_statuses"
   add_foreign_key "job_applications", "job_posts"
   add_foreign_key "job_applications", "users", column: "candidate_id"
@@ -158,4 +162,5 @@ ActiveRecord::Schema.define(version: 2020_08_19_020105) do
   add_foreign_key "profiles", "genders"
   add_foreign_key "profiles", "users"
   add_foreign_key "users", "roles"
+  add_foreign_key "users", "units"
 end

@@ -5,10 +5,16 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
 
   belongs_to :role
+  belongs_to :unit, optional: true
   has_many :job_applications, dependent: :destroy, foreign_key: "candidate_id",
            class_name: JobApplication.name
+  has_one :profile, dependent: :destroy
 
+  accepts_nested_attributes_for :profile
+
+  delegate :full_name, :introduction, to: :profile, allow_nil: true
   delegate :id, to: :role, prefix: true, allow_nil: true
+  delegate :id, to: :unit, prefix: true, allow_nil: true
 
   validates :email, presence: true,
     length: {minimum: Settings.validations.user.email_minlength,
@@ -85,9 +91,11 @@ class User < ApplicationRecord
   end
 
   def is_recruiter?
-    return true if role_id.eql? Settings.role.recruiter
+    role_id.eql?(Settings.role.recruiter) && unit_id.eql?(Settings.unit.hr)
+  end
 
-    false
+  def is_not_hr?
+    role_id.eql?(Settings.role.recruiter) && !unit_id.eql?(Settings.unit.hr)
   end
 
   private

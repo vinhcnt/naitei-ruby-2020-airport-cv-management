@@ -59,7 +59,7 @@
           <li class="has-submenu">
             <%= link_to t(".candidate"), Settings.empty_path %><span class="submenu-arrow"></span>
             <ul class="submenu">
-              <li><%= link_to t(".my_profile"), Settings.empty_path %></li>
+              <li><%= link_to t(".my_profile"), profile_path(current_user) %></li>
               <li><%= link_to t(".job_applications_history"), job_applications_path %></li>
             </ul>
           </li>

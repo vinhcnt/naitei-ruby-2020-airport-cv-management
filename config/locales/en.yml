@@ -20,6 +20,9 @@ en:
     job_post:
       apply_now: "Apply Now"
       note: "Notes: "
+  date:
+    formats:
+      years: "%Y"
   layouts:
     header:
       post_a_job: "Post a Job"
@@ -147,11 +150,32 @@ en:
   sessions:
     new:
       signin: "Sign In"
-      new_user: "Tạo tài khoản mới?"
-      email: "Địa chỉ email"
-      password: "Mật khẩu"
+      new_user: "New user?"
+      email: "Email"
+      password: "Passoword"
       error_message: "Invailid email or password!"
       logout: "You are logged out"
+      you_are_not_allowed: "You are not allowed to login"
+    create:
+      success: "Account created"
+      error: "Account create failed"
+      email: "Email"
+      password: "Password"
+  profiles:
+    educations:
+      educations: "Educations"
+    experiences:
+      experiences: "Experiences"
+    profile:
+      general_information: "General Information"
+      name: "Full name"
+      date_of_birth: "Date of birth"
+      gender: "Gender"
+      address: "Address"
+      phone_number: "Phone Number"
+    show:
+      title: "Candidate Profile"
+      user_not_found: "User not found"
   job_applications:
     index:
       title: "Job Applications History"

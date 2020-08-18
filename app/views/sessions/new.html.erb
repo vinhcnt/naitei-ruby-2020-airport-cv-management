@@ -16,21 +16,19 @@
                       <%= f.label :email do %>
                         <%= t ".email " %><span class="text-danger"> *</span>
                       <% end %>
-                      <%= f.email_field :email, class: "form-control", required: true %>
+                      <%= f.email_field :email, class: "form-control mb-4", required: true %>
                       <%= f.label :password do %>
                         <%= t ".password" %><span class="text-danger"> *</span>
                       <% end %>
-                      <%= f.password_field :password, class: "form-control", required: true %>
-                      <div class="col-lg-12">
-                        <%= f.label :remember_me, class: "checkbox inline" do %>
+                      <%= f.password_field :password, class: "form-control mb-4", required: true %>
+                      <%= f.label :remember_me, class: "checkbox inline" do %>
                         <%= f.check_box :remember_me %>
                         <span><%= t ".remember_me" %></span>
                       <% end %>
-                        <p class="float-right forgot-pass">
-                          <%= link_to t(".forgot_password"), new_password_reset_path, class:"text-dark font-weight-bold" %>
-                        </p>
-                      </div>
-                      <%= f.submit t(".signin"), class: "btn btn-primary w-100" %>
+                      <p class="float-right forgot-pass">
+                        <%= link_to t(".forgot_password"), new_password_reset_path, class:"text-dark font-weight-bold" %>
+                      </p>
+                      <%= f.submit t(".signin"), class: "btn btn-primary w-100 mb-4" %>
                     <% end %>
                     <p> <%= t ".new_user" %> <%= link_to t(".sign_up_now"), signup_path %></p>
                   </div>
