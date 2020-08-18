@@ -201,3 +201,12 @@ vi:
     job_application:
       ago: "trước"
       see_details: "Xem chi tiết"
+      log_in: "Đăng nhập"
+      new_user: "Tạo tài khoản mới?"
+      email: "Địa chỉ email"
+      password: "Mật khẩu"
+  send:
+    ok: "Gửi thành công "
+    error: "Thất bại"
+  btn:
+    apply: "DK"

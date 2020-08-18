@@ -13,6 +13,18 @@ class JobApplicationsController < ApplicationController
     end
   end
 
+  def create
+    @job_application = JobApplication.new candidate_id: current_user&.id,
+                                          job_post_id: params[:id]
+    if @job_application.save
+      flash[:success] = t "send.ok"
+      redirect_to job_applications_path
+    else
+      flash[:error] = t "send.error"
+      redirect_to root_url
+    end
+  end
+
   private
 
   def candidate_index
