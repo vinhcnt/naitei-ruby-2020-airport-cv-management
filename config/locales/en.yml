@@ -7,6 +7,7 @@ en:
       employer: "Employer"
       candidate: "Candidate"
       contact: "Contact"
+      sign_up: "Sign up"
     footer:
       slogan: "Fly by your way"
       company: "Company"
@@ -45,6 +46,12 @@ en:
       featured_jobs: "Featured Jobs"
       part_time: "Part Time"
       full_time: "Full Time"
+    error_messages:
+      success: "Welcome to the Job Board!"
+      danger: "Sign up error"
+      user_not_found: "User not found"
+      the_form_contains: "The form contains "
+      error: "error"
   static_pages:
     home:
       title: "Home"
@@ -57,3 +64,32 @@ en:
         answer: "You are on the Tokyo Airport recruitment page."
       - question: "Who should I send CV to?"
         answer: "Create your CV right on this website and send your request to us."
+  users:
+    new:
+      signup: "Sign Up"
+      content: "This will be a signup page for new users."
+      firstname: "Firstname"
+      lastname: "Lastname"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      create: "Create my account"
+      i_accept: "I accept Terms And Condition"
+      already_have_an_account : "Already have an account?"
+      sign_in: "Sign in"
+      or_signup_with: "Or signup with"
+    show:
+      user_not_found: "User not found"
+    create:
+      success: "Account created"
+      error: "Account create failed"
+  user_mailer:
+    account_activation:
+      title: "Account activation"
+      greeting: "Hi"
+      welcome: "Welcome to the Job Board! Click on the link below to activate your account: "
+      activate: "Activate"
+  account_activations:
+    edit:
+      account_activated: "Account activated!"
+      invalid_activation_link: "Invalid activation link"
