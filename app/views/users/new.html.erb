@@ -1,0 +1,87 @@
+<% provide :title, t(".signup") %>
+<section class="vh-100">
+  <div class="home-center">
+    <div class="home-desc-center">
+      <div class="container">
+        <div class="row justify-content-center mt-4 mb-4">
+          <div class="col-md-6">
+            <div class="login_page bg-white shadow rounded p-4">
+              <div class="text-center">
+                <h4 class="mb-4"><%= t ".signup" %></h4>
+              </div>
+              <%= form_for @user, class: "login-form" do |f| %>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= f.label :email do %>
+                        <%= t ".email" %><span class="text-danger"> *</span>
+                      <% end %>
+                      <%= f.email_field :email, class: "form-control", required: true %>
+                      <div class="invalid-feedback" style="display: block;">
+                        <%= f.object.errors.full_messages_for(:email).join("\n") %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= f.label :password do %>
+                        <%= t ".password" %><span class="text-danger"> *</span>
+                      <% end %>
+                      <%= f.password_field :password, class: "form-control", required: true %>
+                      <div class="invalid-feedback" style="display: block;">
+                        <%= f.object.errors.full_messages_for(:password).join("\n") %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= f.label :password_confirmation do %>
+                        <%= t ".password_confirmation" %><span class="text-danger"> *</span>
+                      <% end %>
+                      <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+                      <div class="invalid-feedback" style="display: block;">
+                        <%= f.object.errors.full_messages_for(:password_confirmation).join("\n") %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <%= f.submit t(".signup"), class: "btn btn-primary w-100"%>
+                  </div>
+                </div>
+              <% end %>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <div class="custom-control m-0 custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 mt-4 text-center">
+                <h6><%= t ".or_signup_with" %></h6>
+                <ul class="list-unstyled social-icon mb-0 mt-3">
+                  <li class="list-inline-item">
+                    <%= link_to Settings.empty_path, class: "rounded" do %>
+                      <i class="fab fa-facebook"></i>
+                    <% end %>
+                  </li>
+                  <li class="list-inline-item">
+                    <%= link_to Settings.empty_path, class: "rounded" do %>
+                      <i class="fab fa-google-plus"></i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+              <div class="mx-auto text-center">
+                <p class="mb-0 mt-3"><small class="text-dark mr-2"><%= t ".already_have_an_account" %></small>
+                  <%= link_to Settings.empty_path, class: "text-dark font-weight-bold" do %>
+                    <%= t ".sign_in" %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
