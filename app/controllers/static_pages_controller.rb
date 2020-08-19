@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
-  def home; end
+  def home
+    @job_posts = JobPost.home_recent_jobs
+    @categories = Category.home_popular_category
+  end
 
   def help; end
 

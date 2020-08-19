@@ -7,6 +7,19 @@ en:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "&hellip;"
+  categories:
+    index:
+      title: "Categories"
+      all_categries: "All of categories"
+    category:
+      jobs: " Jobs"
+  job_posts:
+    index:
+      title: "Job Posts"
+      find_your_jobs: "Find Your Jobs"
+    job_post:
+      apply_now: "Apply Now"
+      note: "Notes: "
   layouts:
     header:
       post_a_job: "Post a Job"
@@ -34,9 +47,6 @@ en:
         - "Saturday : 10:00 to 15:00"
         - "Sunday : Day Off (Holiday)"
   shared:
-    home_start:
-      sharing_words: "Start a new job with us right now."
-      greeting_words: "We are Tokyo Airport"
     contact_form:
       address: "Handico Tower, Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội"
       contact_info: "Contact Info"
@@ -46,17 +56,6 @@ en:
       subject: "Subject"
       message: "Message"
       submit: "Submit"
-    job:
-      apply_now: "Apply Now"
-    popular_category:
-      popular_category: "Popular Category"
-      browse_all_categories: "Browse All Categories"
-    jobs_list:
-      find_your_jobs: "Find Your Jobs"
-      recent_jobs: "Recent Jobs"
-      featured_jobs: "Featured Jobs"
-      part_time: "Part Time"
-      full_time: "Full Time"
     error_messages:
       success: "Welcome to the Job Board!"
       danger: "Sign up error"
@@ -75,6 +74,18 @@ en:
         answer: "You are on the Tokyo Airport recruitment page."
       - question: "Who should I send CV to?"
         answer: "Create your CV right on this website and send your request to us."
+    home_start:
+      sharing_words: "Start a new job with us right now."
+      greeting_words: "We are Tokyo Airport"
+    popular_category:
+      popular_category: "Popular Category"
+      browse_all_categories: "Browse All Categories"
+    jobs_list:
+      find_your_jobs: "Find Your Jobs"
+      recent_jobs: "Recent Jobs"
+      featured_jobs: "Featured Jobs"
+      part_time: "Part Time"
+      full_time: "Full Time"
   password_resets:
     private:
       user_not_found: "User not found"

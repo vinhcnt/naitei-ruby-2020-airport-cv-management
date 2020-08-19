@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    resources :categories, only: :index
+    resources :job_posts, only: :index
     resources :users, only: :create, path: "signup"
     resources :account_activations, only: :edit
     resources :password_resets, except: %i(index show destroy)

@@ -25,3 +25,8 @@ job_applications:
 role:
   candidate: 1
   recruiter: 2
+job: 4
+category:
+  home: 8
+  per_page: 8
+
