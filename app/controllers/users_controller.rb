@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:success] = t ".success"
+      flash[:info] = t ".email_sent"
       redirect_to root_path
     else
       flash[:error] = t ".error"

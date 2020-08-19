@@ -64,6 +64,28 @@ vi:
           answer: "Bạn đang ở trang tuyển dụng của Tokyo Airport."
         - question: "Tôi phải gửi CV tới ai?"
           answer: "Hãy tạo CV ngay trên trang web này và gửi yêu cầu đến chúng tôi."
+  password_resets:
+    private:
+      user_not_found: "Không tìm thấy người dùng"
+      can_not_reset_password: "Không thể đặt lại mật khẩu"
+      password_has_been_reset: "Mật khẩu đã được đổi"
+      can_not_reset_password: "Không thể đặt lại mật khẩu"
+    new:
+      forgot_password: "Quên mật khẩu"
+      submit: "Gửi"
+      please_enter: "Hãy điền địa chỉ email. Bạn sẽ nhận được email đặt lại mật khẩu."
+      recover_account: "Đặt lại mật khẩu"
+      home: "Trang chủ"
+    create:
+      email_sent: "Đã gửi email với hướng dẫn đặt lại mật khẩu"
+      send_fail: "Không tìm thấy địa chỉ email"
+    update:
+      cant_be_empty: "Không để trống"
+    edit:
+      title: "Đặt lại mật khẩu"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      submit: "Gửi"
   users:
     new:
       signup: "Đăng ký"
@@ -83,12 +105,19 @@ vi:
     create:
       success: "Tạo tài khoản thành công"
       error: "Có lỗi xảy ra, không thể tạo tài khoản"
+      email_sent: "Hãy kiểm tra email để kích hoạt tài khoản của bạn"
   user_mailer:
     account_activation:
       title: "Kích hoạt tài khoản"
       greeting: "Chào"
       welcome: "Chào mừng đến với Job Board. Ấn vào link dưới đây để kích hoạt tài khoản"
       activate: "Kích hoạt"
+      password_reset: "Đặt lại mật khẩu"
+    password_reset:
+      password_reset: "Đặt lại mật khẩu"
+      click_the_link_blow: "Nhấn vào liên kết dưới đây để đặt lại mật khẩu:"
+      expire_in: "Đường đẫn sẽ hết hạn sau hai tiếng"
+      if_you_did_not_request: "Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này và mật khẩu của bạn sẽ được giữ nguyên."
   account_activations:
     edit:
       account_activated: "Tài khoản đã được kích hoạt!"

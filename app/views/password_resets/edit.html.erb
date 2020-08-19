@@ -1,0 +1,49 @@
+<% provide :title, t(".title") %>
+<section class="vh-100">
+  <div class="home-center">
+    <div class="home-desc-center">
+      <div class="container">
+        <div class="row justify-content-center mt-4 mb-4">
+          <div class="col-md-6">
+            <div class="login_page bg-white shadow rounded p-4">
+              <div class="text-center">
+                <h4 class="mb-4"><%= t ".title" %></h4>
+              </div>
+              <%= form_for @user, class: "login-form", url: password_reset_path(params[:id]) do |f| %>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= hidden_field_tag :email, @user.email %>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= f.label :password, t(".password") %>
+                      <div class="invalid-feedback" style="display: block;">
+                        <%= f.object.errors.full_messages_for(:password).join("\n") %>
+                      </div>
+                      <%= f.password_field :password, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= f.label :password_confirmation, t(".password_confirmation") %>
+                      <div class="invalid-feedback" style="display: block;">
+                        <%= f.object.errors.full_messages_for(:password).join("\n") %>
+                      </div>
+                      <%= f.password_field :password_confirmation, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <%= f.submit t(".submit"), class: "btn btn-primary w-100"%>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

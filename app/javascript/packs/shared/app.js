@@ -61,7 +61,7 @@ import './nice-select'
     return false;
   });
 
-  if (window.location.href.includes('/signup') || window.location.href.includes('/login')) {
+  if (window.location.href.includes('/signup') || window.location.href.includes('/login') || window.location.href.includes('/password_resets')) {
     $('#topnav').hide()
     $('.footer').hide()
   }
