@@ -5,6 +5,10 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
 
   belongs_to :role
+  has_many :job_applications, dependent: :destroy, foreign_key: "candidate_id",
+           class_name: JobApplication.name
+
+  delegate :id, to: :role, prefix: true, allow_nil: true
 
   validates :email, presence: true,
     length: {minimum: Settings.validations.user.email_minlength,
@@ -72,6 +76,18 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.validations.user.password_reset_expired.hours.ago
+  end
+
+  def is_candidate?
+    return true if role_id.eql? Settings.role.candidate
+
+    false
+  end
+
+  def is_recruiter?
+    return true if role_id.eql? Settings.role.recruiter
+
+    false
   end
 
   private

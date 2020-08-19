@@ -319,10 +319,9 @@ button:not(:disabled) {
       display: inline-block;
       margin-right: 5px;
       &:after {
-        content: "\f142";
+        content: "/";
         font-size: 16px;
         color: $light;
-        font-family: "Font Awesome 5 Free";
       }
       &:last-child {
         margin-right: 0;

@@ -1,5 +1,12 @@
 vi:
   title: "Tuyển dụng"
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
   layouts:
     header:
       post_a_job: "Đăng việc"
@@ -8,6 +15,10 @@ vi:
       candidate: "Ứng viên"
       contact: "Liên hệ"
       sign_up: "Đăng ký"
+      logout: "Đăng xuất"
+      signin: "Đăng nhập"
+      my_profile: "Hồ sơ của tôi"
+      job_applications_history: "Lịch sử ứng tuyển"
     footer:
       slogan: "Hãy bay theo cách của bạn"
       company: "Doang nghiệp"
@@ -108,7 +119,7 @@ vi:
       email_sent: "Hãy kiểm tra email để kích hoạt tài khoản của bạn"
   user_mailer:
     account_activation:
-      title: "Kích hoạt tài khoản"
+      account_activation: "Kích hoạt tài khoản"
       greeting: "Chào"
       welcome: "Chào mừng đến với Job Board. Ấn vào link dưới đây để kích hoạt tài khoản"
       activate: "Kích hoạt"
@@ -124,7 +135,14 @@ vi:
       invalid_activation_link: "Link kích hoạt không tồn tại"
   sessions:
     new:
-      log_in: Đăng nhập
-      new_user: Tạo tài khoản mới?
-      email: Địa chỉ email
-      password: Mật khẩu
+      signin: "Đăng nhập"
+      new_user: "Tạo tài khoản mới?"
+      email: "Địa chỉ email"
+      password: "Mật khẩu"
+      error_message: "Invailid email or password!"
+      logout: "You are logged out"
+  job_applications:
+    index:
+      title: "Lịch sử ứng tuyển"
+    job_application:
+      ago: "trước"

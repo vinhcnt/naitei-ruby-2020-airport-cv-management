@@ -5,6 +5,13 @@
       <div class="col-md-6">
         <div class="text-center text-white">
           <h4 class="text-uppercase title mb-4"><%= yield(:title) if content_for?(:title) %></h4>
+          <ul class="page-next d-inline-block mb-0">
+            <% defined?(breadcrumb) && breadcrumb&.each do |child| %>
+              <li>
+                <%= link_to child[:title], child[:path], class: "text-uppercase font-weight-bold" %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
