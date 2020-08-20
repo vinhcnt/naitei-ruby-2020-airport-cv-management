@@ -11,6 +11,12 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    log_out
+    flash[:success] = t "sessions.new.logout"
+    redirect_to login_path
+  end
+
   private
 
   def authenticate_handle user
