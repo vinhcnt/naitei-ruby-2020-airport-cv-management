@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     resources :users, only: :create, path: "signup"
     resources :account_activations, only: :edit
+    resources :password_resets, except: %i(index show destroy)
   end
 end

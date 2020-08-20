@@ -64,6 +64,28 @@ en:
         answer: "You are on the Tokyo Airport recruitment page."
       - question: "Who should I send CV to?"
         answer: "Create your CV right on this website and send your request to us."
+  password_resets:
+    private:
+      user_not_found: "User not found"
+      password_reset_has_expired: "Password reset has expired."
+      password_has_been_reset: "Password has been reset."
+      can_not_reset_password: "Can not reset password"
+    new:
+      forgot_password: "Forgot password"
+      submit: "Submit"
+      please_enter: "Please enter your email address. You will receive a link to create a new password via email."
+      recover_account: "Recover Account"
+      home: "Homepage"
+    create:
+      email_sent: "Email sent with password reset instructions"
+      send_fail: "Email address not found"
+    update:
+      cant_be_empty: "can't be empty"
+    edit:
+      title: "Reset password"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      submit: "Submit"
   users:
     new:
       signup: "Sign Up"
@@ -83,12 +105,19 @@ en:
     create:
       success: "Account created"
       error: "Account create failed"
+      email_sent: "Please check your email to activate your account."
   user_mailer:
     account_activation:
-      title: "Account activation"
+      account_activation: "Account activation"
       greeting: "Hi"
       welcome: "Welcome to the Job Board! Click on the link below to activate your account: "
       activate: "Activate"
+      password_reset: "Password reset"
+    password_reset:
+      password_reset: "Password reset"
+      click_the_link_blow: "To reset your password click the link below:"
+      expire_in: "This link will expire in two hours."
+      if_you_did_not_request: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
   account_activations:
     edit:
       account_activated: "Account activated!"
