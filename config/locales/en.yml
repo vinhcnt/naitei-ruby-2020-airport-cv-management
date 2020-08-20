@@ -93,3 +93,7 @@ en:
     edit:
       account_activated: "Account activated!"
       invalid_activation_link: "Invalid activation link"
+  sessions:
+    new:
+      signin: "Sign In"
+      error_message: "Invailid email or password!"

@@ -12,9 +12,12 @@
         </div>
       </div>
       <div class="float-right">
-        <ul class="topbar-list list-unstyled d-flex" style="margin: 11px 0px;">
-          <li class="list-inline-item"><%= link_to t(".sign_up"), signup_path %></li>
-        </ul>
+        <% unless logged_in? %>
+          <ul class="topbar-list list-unstyled d-flex" style="margin: 11px 0px;">
+            <li class="list-inline-item"><%= link_to t(".sign_up"), signup_path %></li>
+            <li class="list-inline-item"><%= link_to t(".signin"), login_path %></li>
+          </ul>
+        <% end %>
       </div>
       <div class="clearfix"></div>
     </div>

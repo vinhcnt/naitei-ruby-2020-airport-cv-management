@@ -16,3 +16,5 @@ validations:
     password_minlength: 6
     password_maxlength: 15
     ava_size: 80
+user:
+  checkbox_value: "1"

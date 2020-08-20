@@ -1,9 +1,8 @@
 class User < ApplicationRecord
-  USER_PARAMS = %i(email password password_confirmation).freeze
   VALID_EMAIL_REGEX = Settings.validations.user.email_regex
+  USER_PARAMS = %i(email password password_confirmation).freeze
 
-  attr_accessor :activation_token
-
+  attr_accessor :activation_token, :remember_token
   belongs_to :role
 
   validates :email, presence: true,
@@ -37,11 +36,19 @@ class User < ApplicationRecord
     end
   end
 
-  def authenticated? attribute, token
-    digest = send "#{attribute}_digest"
-    return false unless digest
+  def remember
+    self.remember_token = User.new_token
+    update :remember_digest, User.digest(remember_token)
+  end
 
-    BCrypt::Password.new(digest).is_password? token
+  def authenticated? remember_token
+    return false unless remember_digest
+
+    BCrypt::Password.new(remember_digest).is_password? remember_token
+  end
+
+  def forget
+    update remember_digest: nil
   end
 
   def activate
