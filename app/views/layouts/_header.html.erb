@@ -35,7 +35,7 @@
     </div>
     <% if current_user&.is_recruiter? %>
       <div class="buy-button">
-        <%= link_to t(".post_a_job"), Settings.empty_path, class: "btn btn-primary" %>
+        <%= link_to t(".post_a_job"), new_job_post_url, class: "btn btn-primary" %>
       </div>
     <% end %>
     <div class="menu-extras">

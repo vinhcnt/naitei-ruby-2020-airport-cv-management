@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_064444) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_job_posts_on_category_id"
     t.index ["unit_id"], name: "index_job_posts_on_unit_id"
+    t.index ["user_id", "created_at"], name: "index_job_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_job_posts_on_user_id"
   end
 

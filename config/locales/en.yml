@@ -14,12 +14,31 @@ en:
     category:
       jobs: " Jobs"
   job_posts:
+    create:
+      success: "Successed post a job"
+      error: "Can not post a job"
     index:
       title: "Job Posts"
       find_your_jobs: "Find Your Jobs"
     job_post:
       apply_now: "Apply Now"
       note: "Notes: "
+    new:
+      title: "New Job Post"
+      post_a_new_job: "Post a new job: "
+      title2: "Title"
+      location: "Location"
+      salary_from: "Salary from"
+      salary_to: "Salary to"
+      note: "Note"
+      description: "Description"
+      requirement: "Requirement"
+      category_id: "Category"
+      unit_id: "Unit"
+      submit: "Submit"
+      your_job_notification: "Your Job Notification"
+      subcribe: "Subcribe"
+      your_email: "Your email"
   date:
     formats:
       years: "%Y"

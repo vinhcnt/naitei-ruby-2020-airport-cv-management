@@ -19,6 +19,12 @@ validations:
     password_maxlength: 15
     ava_size: 80
     password_reset_expired: 2
+  job_post:
+    title_min: 5
+    number_min: 2
+    max: 2147483647
+    content_min: 10
+    zero: 0
 user:
   checkbox_value: "1"
 job_applications:
@@ -30,6 +36,5 @@ job: 4
 category:
   home: 8
   per_page: 8
-
 unit:
   hr: 1

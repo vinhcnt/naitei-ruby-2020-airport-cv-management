@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :job_applications, dependent: :destroy, foreign_key: "candidate_id",
            class_name: JobApplication.name
   has_one :profile, dependent: :destroy
+  has_many :job_posts, dependent: :destroy
 
   accepts_nested_attributes_for :profile
 

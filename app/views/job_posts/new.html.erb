@@ -1,0 +1,166 @@
+<% provide :title, t(".title") %>
+<%= render "shared/start"%>
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="rounded shadow bg-white p-4">
+          <div class="custom-form">
+            <div id="message3"></div>
+            <%= form_for @job_post, class: "login-form" do |f| %>
+              <h4 class="text-dark mb-3"><%= t ".post_a_new_job" %></h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :title do %>
+                      <div class="text-muted">
+                        <%= t ".title2" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <%= f.text_field :title, minlength: Settings.validations.job_post.title_min, class: "form-control resume", required: true %>
+                    <div class="invalid-feedback">
+                      <%= f.object.errors.full_messages_for(:title).join("\n") %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :location do %>
+                      <div class="text-muted">
+                        <%= t ".location" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <%= f.text_field :location, minlength: Settings.validations.job_post.content_min, class: "form-control", required: true %>
+                    <div class="invalid-feedback">
+                      <%= f.object.errors.full_messages_for(:location).join("\n") %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :salary_from do %>
+                      <div class="text-muted">
+                        <%= t ".salary_from" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <%= f.number_field :salary_from, min: Settings.validations.job_post.zero,
+                                                     max: Settings.validations.job_post.max,
+                                                     class: "form-control", required: true %>
+                    <div class="invalid-feedback">
+                      <%= f.object.errors.full_messages_for(:salary_from).join("\n") %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :salary_to do %>
+                      <div class="text-muted">
+                        <%= t ".salary_to" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <%= f.number_field :salary_to, min: Settings.validations.job_post.zero,
+                                                   max: Settings.validations.job_post.max,
+                                                   class: "form-control", required: true %>
+                    <div class="invalid-feedback">
+                      <%= f.object.errors.full_messages_for(:salary_to).join("\n") %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :description do %>
+                      <div class="text-muted">
+                        <%= t ".description" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <%= f.text_area :description, minlength: Settings.validations.job_post.content_min, class: "form-control", required: true %>
+                    <div class="invalid-feedback">
+                      <%= f.object.errors.full_messages_for(:description).join("\n") %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :requirement do %>
+                      <div class="text-muted">
+                        <%= t ".requirement" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <%= f.text_area :requirement, minlength: Settings.validations.job_post.content_min, class: "form-control", required: true %>
+                    <div class="invalid-feedback">
+                      <%= f.object.errors.full_messages_for(:requirement).join("\n") %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :category_id do %>
+                      <div class="text-muted">
+                        <%= t ".category_id" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <div class="form-button">
+                      <%= f.select :category_id, Category.all.collect {|c| [ c.title, c.id ] }, {}, {class: "nice-select rounded"} %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :unit_id do %>
+                      <div class="text-muted">
+                        <%= t ".unit_id" %><span class="text-danger"> *</span>
+                      </div>
+                    <% end %>
+                    <div class="form-button">
+                      <%= f.select :unit_id, Unit.all.collect {|u| [ u.name, u.id ] }, {}, {class: "nice-select rounded"} %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group app-label mt-2">
+                    <%= f.label :note do %>
+                      <div class="text-muted">
+                        <%= t ".note" %>
+                      </div>
+                    <% end %>
+                    <%= f.text_field :note, class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <%= f.submit t(".submit"), class: "btn btn-primary"%>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="section bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-5">
+        <div class="float-left position-relative notification-icon mr-2">
+          <i class="mdi mdi-bell-outline text-primary"></i>
+          <span class="badge badge-pill badge-danger">1</span>
+        </div>
+        <h5 class="mt-2 mb-0"><%= t ".your_job_notification" %></h5>
+      </div>
+      <div class="col-lg-8 col-md-7 mt-4 mt-sm-0">
+        <form>
+          <div class="form-group mb-0">
+            <div class="input-group mb-0">
+              <input name="email" id="email" type="email" class="form-control" placeholder="<%= t ".your_email" %>" required="" aria-describedby="newssubscribebtn">
+              <div class="input-group-append">
+                <button class="btn btn-primary submitBnt" type="submit" id="newssubscribebtn"><%= t ".subcribe"%></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
