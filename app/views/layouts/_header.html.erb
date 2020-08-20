@@ -53,7 +53,12 @@
       <ul class="navigation-menu">
         <li><%= link_to t(".home"), root_path %></li>
         <% if current_user&.is_recruiter? %>
-          <li><%= link_to t(".employer"), Settings.empty_path %></li>
+          <li class="has-submenu">
+            <%= link_to t(".employer"), Settings.empty_path %>
+            <ul class="submenu">
+              <li><%= link_to t(".job_applications_history"), job_applications_path %></li>
+            </ul>
+          </li>
         <% end %>
         <% if current_user&.is_candidate? %>
           <li class="has-submenu">
