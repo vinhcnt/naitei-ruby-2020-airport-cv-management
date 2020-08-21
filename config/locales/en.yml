@@ -1,5 +1,12 @@
 en:
   title: "Recruitment"
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
   layouts:
     header:
       post_a_job: "Post a Job"
@@ -9,6 +16,9 @@ en:
       contact: "Contact"
       sign_up: "Sign up"
       logout: "Logout"
+      signin: "Sign In"
+      my_profile: "My Profile"
+      job_applications_history: "Job applications history"
     footer:
       slogan: "Fly by your way"
       company: "Company"
@@ -126,5 +136,13 @@ en:
   sessions:
     new:
       signin: "Sign In"
+      new_user: "Tạo tài khoản mới?"
+      email: "Địa chỉ email"
+      password: "Mật khẩu"
       error_message: "Invailid email or password!"
       logout: "You are logged out"
+  job_applications:
+    index:
+      title: "Job Applications History"
+    job_application:
+      ago: "ago"

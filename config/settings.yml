@@ -6,6 +6,7 @@ logo_small: 64
 url:
   placeholder:
     home_image: "https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/"
+    job: "https://via.placeholder.com/84x84"
 validations:
   user:
     email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
@@ -19,4 +20,8 @@ validations:
     password_reset_expired: 2
 user:
   checkbox_value: "1"
-
+job_applications:
+  per_page: 5
+role:
+  candidate: 1
+  recruiter: 2

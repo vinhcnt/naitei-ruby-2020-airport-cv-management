@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by email: params[:session][:email]
-    if user&.authenticate(params[:session][:password])
+    if user&.authenticate params[:session][:password]
       authenticate_handle user
     else
       flash[:error] = t "sessions.new.error_message"

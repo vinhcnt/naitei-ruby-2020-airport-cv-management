@@ -1,0 +1,2 @@
+$("#job_applications").html("<%= j render(@job_applications) %>");
+$("#paginator").html("<%= j paginate(@job_applications, remote: true) %>");
