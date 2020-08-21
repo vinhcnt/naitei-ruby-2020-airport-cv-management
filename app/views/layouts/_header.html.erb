@@ -13,9 +13,13 @@
       </div>
       <div class="float-right">
         <% unless logged_in? %>
-          <ul class="topbar-list list-unstyled d-flex" style="margin: 11px 0px;">
+          <ul class="topbar-list list-unstyled d-flex top-right-a">
             <li class="list-inline-item"><%= link_to t(".sign_up"), signup_path %></li>
             <li class="list-inline-item"><%= link_to t(".signin"), login_path %></li>
+          </ul>
+        <% else %>
+          <ul class="topbar-list list-unstyled d-flex top-right-a">
+            <li class="list-inline-item"><%= link_to t(".logout"), login_path %></li>
           </ul>
         <% end %>
       </div>

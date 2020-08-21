@@ -8,6 +8,7 @@ en:
       candidate: "Candidate"
       contact: "Contact"
       sign_up: "Sign up"
+      logout: "Logout"
     footer:
       slogan: "Fly by your way"
       company: "Company"
@@ -126,3 +127,4 @@ en:
     new:
       signin: "Sign In"
       error_message: "Invailid email or password!"
+      logout: "You are logged out"
