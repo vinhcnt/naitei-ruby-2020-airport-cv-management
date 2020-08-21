@@ -1,4 +1,4 @@
 <% provide :title, t(".title") %>
-<%= render "shared/home_start"%>
-<%= render "shared/popular_category" %>
-<%= render "shared/jobs_list" %>
+<%= render "home_start"%>
+<%= render "popular_category" , categories: @categories %>
+<%= render "jobs_list", job_posts: @job_posts %>

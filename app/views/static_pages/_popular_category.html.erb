@@ -8,13 +8,11 @@
       </div>
     </div>
     <div class="row">
-      <% 8.times do %>
-        <%= render "shared/category" %>
-      <% end %>
+      <%= render categories %>
     </div>
     <div class="row justify-content-center">
       <div class="col-12 text-center mt-4 pt-2">
-        <%= link_to t(".browse_all_categories"), Settings.empty_path, class: "btn btn-primary-outline" %>
+        <%= link_to t(".browse_all_categories"), categories_path, class: "btn btn-primary-outline" %>
       </div>
     </div>
   </div>

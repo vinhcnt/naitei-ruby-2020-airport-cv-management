@@ -1,12 +1,12 @@
 <div class="col-lg-3 col-md-6 mt-4 pt-2">
-  <%= link_to Settings.empty_path do %>
+  <%= link_to categories_path(category) do %>
     <div class="popu-category-box bg-light rounded text-center p-4">
       <div class="popu-category-icon mb-3">
         <i class="fa fa-briefcase rounded-pill" aria-hidden="true"></i>
       </div>
       <div class="popu-category-content">
-        <h5 class="mb-2 text-dark title">Category Name</h5>
-        <p class="text-success mb-0 rounded">123 Jobs</p>
+        <h5><%= link_to category.title, categories_path(category), class: "mb-2 text-dark title" %></h5>
+        <p class="text-success mb-0 rounded"><%= category.job_posts.size %><%= t ".jobs" %></p>
       </div>
     </div>
   <% end %>
