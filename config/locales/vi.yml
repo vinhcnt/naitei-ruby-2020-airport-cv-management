@@ -20,6 +20,9 @@ vi:
     job_post:
       apply_now: "Gửi hồ sơ"
       note: "Ghi chú: "
+  date:
+    formats:
+      years: "%Y"
   layouts:
     header:
       post_a_job: "Đăng việc"
@@ -150,8 +153,29 @@ vi:
       new_user: "Tạo tài khoản mới?"
       email: "Địa chỉ email"
       password: "Mật khẩu"
-      error_message: "Invailid email or password!"
-      logout: "You are logged out"
+      error_message: "Email hoặc mật khẩu không chính xác!"
+      logout: "Đã đăng xuất"
+      you_are_not_allowed: "Bạn không được phép đăng nhập"
+    create:
+      success: "Tạo tài khoản thành công"
+      error: "Có lỗi xảy ra, không thể tạo tài khoản"
+      email: "Email"
+      password: "Mật khẩu"
+  profiles:
+    educations:
+      education: "Học vấn"
+    experiences:
+      experience: "Kinh nghiệm"
+    profile:
+      general_information: "Thông tin chung"
+      name: "Tên đầy đủ"
+      date_of_birth: "Ngày sinh"
+      gender: "Giới tính"
+      address: "Địa chỉ"
+      phone_number: "Số điện thoại"
+    show:
+      title: "Hồ sơ ứng viên"
+      user_not_found: "Không tìm thấy hồ sơ này"
   job_applications:
     index:
       title: "Lịch sử ứng tuyển"

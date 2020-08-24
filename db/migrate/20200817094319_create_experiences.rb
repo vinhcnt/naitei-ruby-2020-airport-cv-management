@@ -6,7 +6,7 @@ class CreateExperiences < ActiveRecord::Migration[6.0]
       t.date :date_from
       t.date :date_to
       t.text :additional_information
-      t.references :user, null: false, foreign_key: true
+      t.references :profile, null: false, foreign_key: true
 
       t.timestamps
     end

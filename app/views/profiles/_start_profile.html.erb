@@ -1,0 +1,21 @@
+<section class="bg-half page-next-level" style="background: url('<%= asset_path random_background %>') no-repeat center center / cover;">
+  <div class="bg-overlay"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="candidates-profile-details text-center">
+          <% if profile %>
+            <img src="<%= Settings.url.placeholder.avatar %>" height="150" alt="" class="d-block mx-auto shadow rounded-pill mb-4">
+            <h5 class="text-white mb-2">
+              <%= profile.full_name %>
+            </h5>
+          <% else %>
+            <h1 class="text-white mb-2">
+              <%= t ".no_profile" %>
+            </h1>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

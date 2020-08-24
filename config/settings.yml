@@ -7,6 +7,7 @@ url:
   placeholder:
     home_image: "https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/"
     job: "https://via.placeholder.com/84x84"
+    avatar: "https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/"
 validations:
   user:
     email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
@@ -30,3 +31,5 @@ category:
   home: 8
   per_page: 8
 
+unit:
+  hr: 1

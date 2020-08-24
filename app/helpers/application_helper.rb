@@ -13,4 +13,9 @@ module ApplicationHelper
     end
     javascript_tag flash_script.join("\n")
   end
+
+  def random_background
+    "backgrounds/" + Dir.new(Rails.root.to_s + "/app/assets/images/backgrounds/").to_a
+                        .select{|f| f.downcase.match(/\.jpg|\.jpeg|\.png/)}.sample
+  end
 end
