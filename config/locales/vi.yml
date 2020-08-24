@@ -14,12 +14,31 @@ vi:
     category:
       jobs: " Việc"
   job_posts:
+    create:
+      success: "Đăng thành công công việc"
+      error: "Không thể đăng việc"
     index:
       title: "Bài đăng tìm việc"
       find_your_jobs: "Tìm công việc dành cho bạn"
     job_post:
       apply_now: "Gửi hồ sơ"
       note: "Ghi chú: "
+    new:
+      title: "Đăng tuyển tìm việc"
+      post_a_new_job: "Đăng tuyển tìm việc:"
+      title2: "Tiêu đề"
+      location: "Địa chỉ"
+      salary_from: "Lương khởi điểm"
+      salary_to: "Mức lương cao nhất"
+      note: "Ghi chú"
+      description: "Mô tả công việc"
+      requirement: "Yêu cầu"
+      category_id: "Danh mục"
+      unit_id: "Bộ phận"
+      submit: "Đăng công việc"
+      your_job_notification: "Thông báo về công việc của bạn"
+      subcribe: "Theo dõi"
+      your_email: "Địa chỉ email của bạn"
   date:
     formats:
       years: "%Y"
