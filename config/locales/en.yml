@@ -201,3 +201,12 @@ en:
     job_application:
       ago: "ago"
       see_details: "See more details"
+      log_in: "Login"
+      new_user: "New user?"
+      email: "Email"
+      password: "Password"
+  send:
+    ok: "Successfully sent"
+    error: "Failed!"
+  btn:
+    apply: "Apply"
