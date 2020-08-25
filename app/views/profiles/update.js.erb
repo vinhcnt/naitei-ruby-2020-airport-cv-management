@@ -1,0 +1,8 @@
+<% if @profile.errors.blank? %>
+  $("#general_information").html("<%= j render @profile %>");
+  $("#profileFormModal").modal("hide")
+<% end %>
+$("#profileForm").html("<%= j render "profile_form", profile: @profile %>")
+<% flash.each_with_object([]) do |(type, message), flash_messages| %>
+  toastr.<%= type %>('<%= message %>')
+<% end %>

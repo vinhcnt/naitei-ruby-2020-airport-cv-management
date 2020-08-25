@@ -195,6 +195,29 @@ vi:
     show:
       title: "Hồ sơ ứng viên"
       user_not_found: "Không tìm thấy hồ sơ này"
+      educations: "Học vấn"
+      experiences: "Kinh nghiệm"
+      edit: "Chỉnh sửa"
+    edit:
+      title: "Sửa hồ sơ"
+      educations: "Học vấn"
+      experiences: "Kinh nghiệm"
+    update:
+      profile_updated: "Profile updated"
+      profile_update_failed: "Profile updated failed"
+    profile_modal:
+      general_information: "Thông tin chung"
+      edit_general_information: "Sửa thông tin chung"
+    profile_form:
+      first_name: "Họ"
+      last_name: "Tên"
+      date_of_birth: "Ngày sinh"
+      gender: "Giới tính"
+      address: "Địa chỉ"
+      phone_number: "Số điện thoại"
+      introduction: "Giới thiệu"
+      save_changes: "Lưu"
+      close: "Hủy"
   job_applications:
     index:
       title: "Lịch sử ứng tuyển"

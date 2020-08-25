@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_064444) do
     t.string "last_name"
     t.text "introduction"
     t.date "date_of_birth"
-    t.bigint "gender_id", null: false
+    t.bigint "gender_id", default: 3, null: false
     t.text "address"
     t.string "phone_number"
     t.bigint "user_id", null: false
