@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resources :password_resets, except: %i(index show destroy)
     resources :profiles, only: %i(show edit update)
     resources :job_applications, only: %i(index create update)
+    resources :educations, only: %i(create update destroy)
   end
 end

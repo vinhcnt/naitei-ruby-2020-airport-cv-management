@@ -218,6 +218,18 @@ en:
       introduction: "Introduction"
       save_changes: "Save changes"
       close: "Close"
+    education_modal:
+      add: "add"
+      education: "Education"
+    education_form:
+      college: "College"
+      major: "Major"
+      date_from: "Date form"
+      date_to: "Date to "
+      certification: "Certification"
+      additional_information: "Additional Information"
+      save_changes: "Save changes"
+      close: "Close"
   job_applications:
     index:
       title: "Job Applications History"
@@ -237,3 +249,7 @@ en:
     error: "Failed!"
   btn:
     apply: "Apply"
+  educations:
+    create:
+      success: "Add Successfully"
+      error: "Add Failed"

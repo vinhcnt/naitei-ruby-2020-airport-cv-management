@@ -35,10 +35,10 @@
           <% if @profile.educations.present? %>
             <div class="row">
               <div class="col-lg-12 mt-4 pt-2">
-                <h4 class="text-dark"><%= t ".educations" %></h4>
+                <h4 class="text-dark"><%= t ".educations" %><%= render "education_modal", education: @new_education %></h4>
               </div>
             </div>
-            <div class="row">
+            <div id="educations_details" class="row">
               <%= render @profile.educations %>
             </div>
           <% end %>
