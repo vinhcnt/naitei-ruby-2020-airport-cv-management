@@ -45,7 +45,10 @@ import './nice-select'
   });
 
   // Nice Select
-  $('.nice-select').niceSelect();
+  $(document).on('turbolinks:load', function() {
+    $('.nice-select').niceSelect('destroy');
+    $('.nice-select').niceSelect();
+  })
 
   // Back to top
   $(window).scroll(function () {

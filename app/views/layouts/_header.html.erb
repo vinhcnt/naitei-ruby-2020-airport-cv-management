@@ -19,7 +19,7 @@
           </ul>
         <% else %>
           <ul class="topbar-list list-unstyled d-flex top-right-a">
-            <li class="list-inline-item"><%= link_to t(".logout"), login_path, method: :delete %></li>
+            <li class="list-inline-item"><%= link_to t(".logout"), logout_path, method: :delete %></li>
           </ul>
         <% end %>
       </div>
@@ -64,7 +64,11 @@
           <li class="has-submenu">
             <%= link_to t(".candidate"), Settings.empty_path %><span class="submenu-arrow"></span>
             <ul class="submenu">
-              <li><%= link_to t(".my_profile"), profile_path(current_user) %></li>
+              <% if current_user.profile %>
+                <li><%= link_to t(".my_profile"), profile_path(current_user.profile) %></li>
+              <% else %>
+                <li><%= link_to t(".my_profile"), new_profile_path %></li>
+              <% end %>
               <li><%= link_to t(".job_applications_history"), job_applications_path %></li>
             </ul>
           </li>

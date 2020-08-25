@@ -195,6 +195,29 @@ en:
     show:
       title: "Candidate Profile"
       user_not_found: "User not found"
+      educations: "Educations"
+      experiences: "Experiences"
+      edit: "Edit"
+    edit:
+      title: "Edit Your Profile"
+      educations: "Educations"
+      experiences: "Experiences"
+    update:
+      profile_updated: "Profile updated"
+      profile_update_failed: "Profile updated failed"
+    profile_modal:
+      general_information: "General Information"
+      edit_general_information: "Edit general information"
+    profile_form:
+      first_name: "First name"
+      last_name: "Last name"
+      date_of_birth: "Date of birth"
+      gender: "Gender"
+      address: "Address"
+      phone_number: "Phone Number"
+      introduction: "Introduction"
+      save_changes: "Save changes"
+      close: "Close"
   job_applications:
     index:
       title: "Job Applications History"
