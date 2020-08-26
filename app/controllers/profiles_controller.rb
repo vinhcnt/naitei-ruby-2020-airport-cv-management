@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
 
   def edit
     @new_education = Education.new profile_id: @profile.id
+    @new_experience = Experience.new profile_id: @profile.id
   end
 
   def update

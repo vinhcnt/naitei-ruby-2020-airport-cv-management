@@ -45,6 +45,15 @@ validations:
     text:
       minimum: 0
       maximum: 2000
+  experience:
+    company_name:
+      minimum: 5
+      maximum: 255
+    job_position:
+      minimum: 5
+      maximum: 255
+    additional_information:
+      maximum: 2000
 user:
   checkbox_value: "1"
 job_applications:

@@ -46,7 +46,7 @@ import './nice-select'
 
   // Nice Select
   $(document).on('turbolinks:load', function() {
-    $('select.nice-select').niceSelect('destroy')
+    $('select.nice-select').niceSelect('destroy');
     $('select.nice-select').niceSelect();
   })
 
