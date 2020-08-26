@@ -252,6 +252,7 @@ vi:
       new_user: "Tạo tài khoản mới?"
       email: "Địa chỉ email"
       password: "Mật khẩu"
+      cancel: "Hủy "
     update:
       success: "Đã thay đổi trạng thái của đơn xin việc"
       error: "Không thể thay đổi trạng thái của đơn xin việc"
@@ -263,6 +264,11 @@ vi:
   educations:
     create:
       success: "Thêm thành công"
+      error: "Có lỗi xảy ra"
+    education:
+      delete: "Xóa"
+    destroy:
+      success: "Xóa thành công"
       error: "Có lỗi xảy ra"
   experiences:
     create:
