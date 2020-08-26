@@ -219,7 +219,7 @@ vi:
       save_changes: "Lưu"
       close: "Hủy"
     education_modal:
-      add: "thêm"
+      add: "Thêm"
       education: "Học vấn"
     education_form:
       college: "Đại học/Cao đẳng"
@@ -227,6 +227,14 @@ vi:
       date_from: "Từ ngày"
       date_to: "Đến ngày"
       certification: "Chứng chỉ"
+    experience_modal:
+      add: "Thêm"
+      experience: "Kinh nghiệm"
+    experience_form:
+      company_name: "Tên công ty"
+      job_position: "Vị trí"
+      date_from: "Từ ngày"
+      date_to: "Đến ngày"
       additional_information: "Thông tin thêm"
       save_changes: "Lưu"
       close: "Hủy"
@@ -250,6 +258,10 @@ vi:
   btn:
     apply: "DK"
   educations:
+    create:
+      success: "Thêm thành công"
+      error: "Có lỗi xảy ra"
+  experiences:
     create:
       success: "Thêm thành công"
       error: "Có lỗi xảy ra"

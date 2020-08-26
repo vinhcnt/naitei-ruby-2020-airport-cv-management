@@ -219,7 +219,7 @@ en:
       save_changes: "Save changes"
       close: "Close"
     education_modal:
-      add: "add"
+      add: "Add"
       education: "Education"
     education_form:
       college: "College"
@@ -227,6 +227,14 @@ en:
       date_from: "Date form"
       date_to: "Date to "
       certification: "Certification"
+    experience_modal:
+      add: "Add"
+      experience: "Experience"
+    experience_form:
+      company_name: "Company Name"
+      job_position: "Job Position"
+      date_from: "Date form"
+      date_to: "Date to"
       additional_information: "Additional Information"
       save_changes: "Save changes"
       close: "Close"
@@ -250,6 +258,10 @@ en:
   btn:
     apply: "Apply"
   educations:
+    create:
+      success: "Add Successfully"
+      error: "Add Failed"
+  experiences:
     create:
       success: "Add Successfully"
       error: "Add Failed"
