@@ -249,6 +249,7 @@ en:
       new_user: "New user?"
       email: "Email"
       password: "Password"
+      cancel: "Cancel "
     update:
       success: "Changed status of Job Application"
       error: "Can not change status of Job Application"

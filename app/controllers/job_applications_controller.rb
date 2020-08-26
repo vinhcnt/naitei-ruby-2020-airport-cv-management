@@ -28,18 +28,8 @@ class JobApplicationsController < ApplicationController
   end
 
   def update
-    return unless current_user.is_recruiter?
-
     @job_application = JobApplication.find_by id: params[:id]
-    if @job_application.update status_params
-      flash.now[:success] = t ".success"
-    else
-      flash.now[:error] = t ".error"
-    end
-    respond_to do |format|
-      format.html {}
-      format.js
-    end
+    update_status if current_user&.is_recruiter? || (current_user.eql? @job_application&.candidate)
   end
 
   private
@@ -55,5 +45,16 @@ class JobApplicationsController < ApplicationController
                                     .desc_order
                                     .page(params[:page])
                                     .per Settings.job_applications.per_page
+  end
+
+  def update_status
+    if @job_application.update status_params
+      flash.now[:success] = t ".success"
+    else
+      flash.now[:error] = t ".error"
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 end

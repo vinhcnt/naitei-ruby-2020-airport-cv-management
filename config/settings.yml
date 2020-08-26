@@ -71,3 +71,4 @@ status:
   denied: 2
   interviewing: 3
   accepted: 4
+  cancel: 5
