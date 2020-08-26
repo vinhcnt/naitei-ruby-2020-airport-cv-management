@@ -265,6 +265,11 @@ en:
     create:
       success: "Add Successfully"
       error: "Add Failed"
+    education:
+      delete: "Delete"
+    destroy:
+      success: "Delete Successfully"
+      error: "Delete Failed"
   experiences:
     create:
       success: "Add Successfully"
