@@ -71,7 +71,7 @@ end
                          job_post_id: rand(1..20)
 end
 
-users = User.where(role_id: 1).take 6
+users = User.all
 users.each do |user|
   profile = user.build_profile first_name: Faker::Name.first_name,
                                last_name: Faker::Name.last_name,
@@ -79,7 +79,7 @@ users.each do |user|
                                date_of_birth: Faker::Date.between(from: '1989-09-23', to: '2002-09-25'),
                                gender_id: Faker::Number.between(from: 1, to: 3),
                                address: Faker::Address.full_address,
-                               phone_number: Faker::PhoneNumber.cell_phone_in_e164
+                               phone_number: "0987654321"
   profile.save
 end
 
