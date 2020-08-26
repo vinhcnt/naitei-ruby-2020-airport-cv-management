@@ -227,6 +227,8 @@ vi:
       date_from: "Từ ngày"
       date_to: "Đến ngày"
       certification: "Chứng chỉ"
+      save_changes: "Lưu"
+      close: "Hủy"
     experience_modal:
       add: "Thêm"
       experience: "Kinh nghiệm"
@@ -261,6 +263,8 @@ vi:
     create:
       success: "Thêm thành công"
       error: "Có lỗi xảy ra"
+    education:
+      delete: "Xóa"
   experiences:
     create:
       success: "Thêm thành công"

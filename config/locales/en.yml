@@ -227,6 +227,8 @@ en:
       date_from: "Date form"
       date_to: "Date to "
       certification: "Certification"
+      save_changes: "Save changes"
+      close: "Close"
     experience_modal:
       add: "Add"
       experience: "Experience"
@@ -261,6 +263,8 @@ en:
     create:
       success: "Add Successfully"
       error: "Add Failed"
+    education:
+      delete: "Delete"
   experiences:
     create:
       success: "Add Successfully"
