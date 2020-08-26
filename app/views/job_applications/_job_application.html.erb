@@ -30,9 +30,9 @@
       <% end %>
       <% if current_user&.is_recruiter? %>
         <div class="col-lg-3 col-md-3 text-right">
-          <%= form_tag job_application_path(job_application), remote: true, method: :patch do |f| %>
+          <%= form_for job_application, remote: true, method: :patch do |f| %>
             <%= hidden_field :job_application_id, job_application.id %>
-            <%= select :job_application, :job_application_status_id, JobApplicationStatus.all.collect {|j| [j.title, j.id]}, {},
+            <%= f.select :job_application_status_id, JobApplicationStatus.all.collect {|j| [j.title, j.id]}, {},
                       class: "nice-select rounded float-right mb-3 mr-2 status-select" %>
           <% end %>
         </div>
