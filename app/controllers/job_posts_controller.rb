@@ -1,7 +1,10 @@
 class JobPostsController < ApplicationController
-  before_action :recruiter_user
+  before_action :recruiter_user, except: :index
 
-  def index; end
+  def index
+    @q = JobPost.ransack(params[:q])
+    @job_posts = @q.result(distinct: true).page(params[:page]).per Settings.job_posts.per_page
+  end
 
   def new
     @job_post = JobPost.new

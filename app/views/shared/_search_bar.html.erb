@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="home-form-position">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="home-registration-form job-list-reg-form bg-light shadow p-4 mb-3">
+          <form class="registration-form">
+            <div class="row">
+              <%= search_form_for q do |f| %>
+                <div class="col-lg-4 col-md-6">
+                  <div class="registration-form-box">
+                    <i class="fa fa-briefcase"></i>
+                    <%= f.search_field :title_cont, class: "form-control rounded registration-input-box", placeholder: "Job keybords..." %>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+
+                  <div class="registration-form-box">
+                  <i class="fa fa-list-alt"></i>
+                  <%= f.select :category_id_eq, Category.all.collect {|c| [c.title, c.id]}, {include_blank: true}, {class: "form-control rounded registration-input-box"} %>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="registration-form-box">
+                    <%= f.submit "search", class: "submitBnt btn btn-primary btn-block" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

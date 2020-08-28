@@ -58,6 +58,8 @@ user:
   checkbox_value: "1"
 job_applications:
   per_page: 5
+job_posts:
+  per_page: 10
 role:
   candidate: 1
   recruiter: 2
@@ -68,6 +70,7 @@ category:
 unit:
   hr: 1
 status:
+  reviewing: 1
   denied: 2
   interviewing: 3
   accepted: 4
