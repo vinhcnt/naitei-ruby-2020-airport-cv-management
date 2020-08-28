@@ -18,6 +18,7 @@ vi:
       success: "Đăng thành công công việc"
       error: "Không thể đăng việc"
     index:
+      result: "Kết quả"
       title: "Bài đăng tìm việc"
       find_your_jobs: "Tìm công việc dành cho bạn"
     job_post:
@@ -69,6 +70,10 @@ vi:
         - "T7 : 10:00 ~ 15:00"
         - "CN : Nghỉ"
   shared:
+    search_bar:
+      job_keywords: "Từ khóa..."
+      category: "Category"
+      search: "Tìm kiếm"
     contact_form:
       address: "Handico Tower, Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội"
       contact_info: "Contact Info"
