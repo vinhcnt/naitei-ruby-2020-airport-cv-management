@@ -73,8 +73,8 @@ category:
 unit:
   hr: 1
 status:
-  reviewing: 1
-  denied: 2
-  interviewing: 3
-  accepted: 4
-  cancel: 5
+  reviewing: "reviewing"
+  denied: "denied"
+  interviewing: "interviewing"
+  accepted: "accepted"
+  cancel: "cancelled"
