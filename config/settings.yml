@@ -22,10 +22,13 @@ validations:
     password_reset_expired: 2
   job_post:
     title_min: 5
+    title_max: 255
     number_min: 2
-    max: 2147483647
+    number_max: 10
     content_min: 10
-    zero: 0
+    content_max: 2000
+    min: 0
+    max: 2147483647
   profile:
     first_name:
       minimum: 1
