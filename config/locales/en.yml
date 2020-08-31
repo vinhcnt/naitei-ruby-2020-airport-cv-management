@@ -18,6 +18,7 @@ en:
       success: "Successed post a job"
       error: "Can not post a job"
     index:
+      result: "result"
       title: "Job Posts"
       find_your_jobs: "Find Your Jobs"
     job_post:
@@ -69,6 +70,10 @@ en:
         - "Saturday : 10:00 to 15:00"
         - "Sunday : Day Off (Holiday)"
   shared:
+    search_bar:
+      job_keywords: "Job keywords..."
+      category: "Category"
+      search: "Tìm kiếm"
     contact_form:
       address: "Handico Tower, Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội"
       contact_info: "Contact Info"
