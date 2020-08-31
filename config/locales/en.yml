@@ -24,6 +24,7 @@ en:
     job_post:
       apply_now: "Apply Now"
       note: "Notes: "
+      see: "See more details"
     new:
       title: "New Job Post"
       post_a_new_job: "Post a new job: "
@@ -40,6 +41,14 @@ en:
       your_job_notification: "Your Job Notification"
       subcribe: "Subcribe"
       your_email: "Your email"
+    show:
+      title: "Job Post Details"
+      job_description: "Job Description"
+      job_requirement: "Job Requirement"
+      salary: "Salary"
+      category: "Category"
+      date_posted: "Date Posted"
+      apply: "Apply this job"
   date:
     formats:
       years: "%Y"
@@ -73,7 +82,7 @@ en:
     search_bar:
       job_keywords: "Job keywords..."
       category: "Category"
-      search: "Tìm kiếm"
+      search: "Search"
     contact_form:
       address: "Handico Tower, Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội"
       contact_info: "Contact Info"
