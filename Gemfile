@@ -24,6 +24,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry-rails"
   gem "rails_best_practices"
+  gem "rails-controller-testing"
   gem "reek"
   gem "rspec-rails"
   gem "rubocop", require: false

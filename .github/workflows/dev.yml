@@ -27,5 +27,5 @@ jobs:
         run: bundle exec rails_best_practices -e "db/schema.rb,db/migrate,vendor,app/models/application_record.rb"
       - name: Rspec        
         run: |
-          DATABASE_USERNAME=root DATABASE_PASSWORD=root DEVELOPMENT_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test TEST_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test bundle exec rails db:create
-          DATABASE_USERNAME=root DATABASE_PASSWORD=root DEVELOPMENT_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test TEST_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test bundle exec rspec --format documentation
+          NOREPLY_EXAMPLE=noreply@example.com DATABASE_USERNAME=root DATABASE_PASSWORD=root DEVELOPMENT_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test TEST_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test bundle exec rails db:create
+          NOREPLY_EXAMPLE=noreply@example.com DATABASE_USERNAME=root DATABASE_PASSWORD=root DEVELOPMENT_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test TEST_DATABASE_NAME=naitei_ruby_2020_airport_cv_management_test bundle exec rspec --format documentation
