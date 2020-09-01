@@ -10,7 +10,7 @@ class Profile < ApplicationRecord
 
   accepts_nested_attributes_for :educations, :experiences, allow_destroy: true, reject_if: :all_blank
 
-  enum gender: {male: "M", female: "F", third_sex: "X"}
+  enum gender: {male: 1, female: 2, third_sex: 3}
 
   validates :first_name, :last_name, presence: true,
     length: {minimum: Settings.validations.profile.first_name.minimum,
