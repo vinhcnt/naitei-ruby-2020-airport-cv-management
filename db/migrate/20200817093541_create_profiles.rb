@@ -8,8 +8,8 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.text :address
       t.string :phone_number
       t.references :user, null: false, foreign_key: true
-      t.integer :gender
-      
+      t.string :gender, default: "X"
+
       t.timestamps
     end
   end
