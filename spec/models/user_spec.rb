@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.describe User, :type => :model do
+  include_examples "create example users"
   let(:user) {FactoryBot.create :user}
   let!(:user_fail) {FactoryBot.build :user, email: nil}
 
@@ -39,7 +40,7 @@ RSpec.describe User, :type => :model do
       is_expected.to have_one(:profile).dependent(:destroy)
     end
   end
-  
+
   describe ".new_token" do
     it "new token should be successfully generated" do
       expect(User.new_token.size > 0).to eq(true)
