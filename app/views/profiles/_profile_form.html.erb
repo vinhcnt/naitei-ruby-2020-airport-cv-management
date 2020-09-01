@@ -40,7 +40,7 @@
         <span class="text-danger">*</span>
       <% end %>
       <div class="form-button">
-        <%= f.select :gender_id, Gender.all.collect {|g| [g.name, g.id]}, {}, {class: "nice-select rounded", required: true} %>
+        <%= f.select :gender, Profile.gender {|g| [g.name, g.id]}, {}, {class: "nice-select rounded", required: true} %>
       </div>
       <div class="invalid-feedback">
         <%= f.object.errors.full_messages_for(:gender_id).join("\n") %>

@@ -4,14 +4,13 @@ class Profile < ApplicationRecord
     << {experiences_attributes: %i(id company_name job_position date_from date_to additional_information _destroy)}
   VALID_PHONE_NUMBER_REGEX = Settings.validations.profile.phone_number
 
-  belongs_to :gender, optional: true
   belongs_to :user
   has_many :educations, dependent: :destroy
   has_many :experiences, dependent: :destroy
 
   accepts_nested_attributes_for :educations, :experiences, allow_destroy: true, reject_if: :all_blank
 
-  delegate :name, to: :gender, prefix: true, allow_nil: true
+  enum gender: {male: 1, female: 2, X: 3}
 
   validates :first_name, :last_name, presence: true,
     length: {minimum: Settings.validations.profile.first_name.minimum,

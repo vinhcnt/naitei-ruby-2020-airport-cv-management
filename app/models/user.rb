@@ -4,7 +4,6 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
-  belongs_to :role
   belongs_to :unit, optional: true
   has_many :job_applications, dependent: :destroy, foreign_key: "candidate_id",
            class_name: JobApplication.name
@@ -14,7 +13,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
 
   delegate :full_name, :introduction, :phone_number, to: :profile, allow_nil: true
-  delegate :id, to: :role, prefix: true, allow_nil: true
+  enum roles: {candidate: 1, recruiter: 2, admin: 3}
   delegate :id, to: :unit, prefix: true, allow_nil: true
 
   validates :email, presence: true,
@@ -85,18 +84,12 @@ class User < ApplicationRecord
     reset_sent_at < Settings.validations.user.password_reset_expired.hours.ago
   end
 
-  def is_candidate?
-    return true if role_id.eql? Settings.role.candidate
-
-    false
-  end
-
   def is_recruiter?
-    role_id.eql?(Settings.role.recruiter) && unit_id.eql?(Settings.unit.hr)
+    roles.eql?(Settings.role.recruiter) && unit_id.eql?(Settings.unit.hr)
   end
 
   def is_not_hr?
-    role_id.eql?(Settings.role.recruiter) && !unit_id.eql?(Settings.unit.hr)
+    roles.eql?(Settings.role.recruiter) && !unit_id.eql?(Settings.unit.hr)
   end
 
   private

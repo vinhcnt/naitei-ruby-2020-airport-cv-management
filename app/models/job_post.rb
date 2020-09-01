@@ -34,6 +34,6 @@ class JobPost < ApplicationRecord
 
   def applied_by user
     job_application = user.job_applications.find_by(job_post_id: id)
-    job_application.present? && job_application.job_application_status_id != Settings.status.cancel
+    job_application.present? && job_application.cancelled?
   end
 end
