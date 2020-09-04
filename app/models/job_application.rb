@@ -7,6 +7,7 @@ class JobApplication < ApplicationRecord
   delegate :category_title, to: :job_post, prefix: true, allow_nil: true
   delegate :location, to: :job_post, prefix: true, allow_nil: true
   delegate :phone_number, to: :candidate, prefix: true, allow_nil: true
+  delegate :id, to: :job_post, prefix: true, allow_nil: true
 
   enum status: {reviewing: "reviewing",
                 interviewing: "interviewing",
@@ -15,4 +16,5 @@ class JobApplication < ApplicationRecord
                 cancelled: "cancelled"}
 
   scope :desc_order, ->{order created_at: :desc}
+  scope :find_job_appl, ->(id){where(job_post_id: id)}
 end

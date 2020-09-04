@@ -32,12 +32,12 @@ class ProfilesController < ApplicationController
   end
 
   def cancan_access_denied
-    flash[:error] = t ".you_are_not_allow_to_do_this_action"
+    flash[:error] = t "shared.error_messages.you_are_not_allow_to_do_this_action"
     redirect_to root_url
   end
 
   def active_record_record_not_found
-    flash[:warning] = t ".profile_not_found"
+    flash[:warning] = t "shared.error_messages.profile_not_found"
     redirect_to root_path
   end
 end

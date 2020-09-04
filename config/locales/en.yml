@@ -98,6 +98,11 @@ en:
       user_not_found: "User not found"
       the_form_contains: "The form contains "
       error: "error"
+      you_are_not_allow_to_do_this_action: "You are not allow to do this action"
+      not_found: "Can not found"
+      job_application_not_found: "Job Application not found"
+      job_post_not_found: "Job Post not found"
+      profile_not_found: "Profile not found"
   static_pages:
     home:
       title: "Home"
@@ -272,9 +277,12 @@ en:
       email: "Email"
       password: "Password"
       cancel: "Cancel "
+      sure: "Are you sure you want to cancel this job?"
     update:
       success: "Changed status of Job Application"
       error: "Can not change status of Job Application"
+    create:
+      error: "Can not apply this job"
   send:
     ok: "Successfully sent"
     error: "Failed!"
