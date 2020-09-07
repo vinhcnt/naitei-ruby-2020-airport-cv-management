@@ -18,7 +18,7 @@
               <p class="text-muted mb-2"><i class="fas fa-map-marker mr-1"></i> <%= @job_post.location %></p>
             </li>
             <li class="list-inline-item">
-              <p class="text-muted mb-2"><i class="fas fa-dollar-sign mr-1"></i>$<%= @job_post.salary_from %> - $<%= @job_post.salary_to %></p>
+              <p class="text-muted mb-2"><i class="fas fa-dollar-sign mr-1"></i><%= @job_post.salary_from %> - <%= @job_post.salary_to %></p>
             </li>
           </ul>
         </div>
@@ -62,7 +62,11 @@
       <div class="col-lg-4 col-md-5 mt-4 mt-sm-0 pt-2 pt-sm-0">
         <div class="company-brand-logo text-center">
           <img src="images/featured-job/img-2.png" alt="" class="img-fluid mx-auto d-block mb-3">
-          <h5 class="text-muted mb-0"><a href="#" class="text-muted"><i class="mdi mdi-bank mr-1"></i>Themes Code.Pvt.Ltd</a></h5>
+          <h5 class="text-muted mb-0">
+            <% if @job_application %>
+              <span id="status_for_<%= @job_application.id %>" class="ml-2 badge badge-<%= @job_application.status %>"><%= @job_application.status %></span>
+            <% end %>
+          </h5>
         </div>
         <div class="job-detail rounded border job-overview mt-4 mb-4">
           <div class="single-post-item mb-4">
@@ -103,7 +107,7 @@
             </div>
           </div>
         </div>
-        <% if current_user&.has_role?(:candidate) && !@job_post.applied_by(current_user) %>
+        <% if can? :create, @job_app %>
           <div class="mt-4">
             <%= form_with url: job_applications_path, method: :post do %>
               <%= hidden_field_tag :id, @job_post.id %>

@@ -31,9 +31,4 @@ class JobPost < ApplicationRecord
              maximum: Settings.validations.job_post.content_max}
 
   scope :home_recent_jobs, ->{order(created_at: :desc).limit Settings.job}
-
-  def applied_by user
-    job_application = user.job_applications.find_by(job_post_id: id)
-    job_application.present? && job_application.cancelled?
-  end
 end

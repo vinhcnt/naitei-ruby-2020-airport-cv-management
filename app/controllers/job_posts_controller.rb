@@ -11,7 +11,10 @@ class JobPostsController < ApplicationController
 
   def new; end
 
-  def show; end
+  def show
+    @job_application = current_user.job_applications.find_job_appl(params[:id]).desc_order.first
+    @job_app = JobApplication.new job_post_id: params[:id], candidate_id: current_user.id
+  end
 
   def create
     @job_post.user = current_user
@@ -31,12 +34,12 @@ class JobPostsController < ApplicationController
   end
 
   def cancan_access_denied
-    flash[:error] = t ".you_are_not_allow_to_do_this_action"
+    flash[:error] = t "shared.error_messages.you_are_not_allow_to_do_this_action"
     redirect_to root_url
   end
 
   def active_record_record_not_found
-    flash[:warning] = t ".job_post_not_found"
+    flash[:warning] = t "shared.error_messages.job_post_not_found"
     redirect_to root_path
   end
 end

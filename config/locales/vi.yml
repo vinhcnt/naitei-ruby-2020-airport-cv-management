@@ -98,6 +98,11 @@ vi:
       user_not_found: "Không tìm thấy người dùng"
       the_form_contains: "Biểu mẫu chứa "
       error: "lỗi"
+      you_are_not_allow_to_do_this_action: "Bạn không có quyền thực hiện hành động này"
+      not_found: "Không thể tìm thấy"
+      job_application_not_found: "Không tìm thấy lịch sử ứng tuyển"
+      job_post_not_found: "Không tìm thấy bài đăng tìm việc"
+      profile_not_found: "Không tìm thấy hồ sơ"
   static_pages:
     home:
       title: "Trang chủ"
@@ -272,9 +277,12 @@ vi:
       email: "Địa chỉ email"
       password: "Mật khẩu"
       cancel: "Hủy "
+      sure: "Bạn có chắc muốn hủy xin việc này không?"
     update:
       success: "Đã thay đổi trạng thái của đơn xin việc"
       error: "Không thể thay đổi trạng thái của đơn xin việc"
+    create:
+      error: "Gửi xin việc thất bại"
   send:
     ok: "Gửi thành công "
     error: "Thất bại"
