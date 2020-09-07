@@ -1,4 +1,5 @@
 <% provide :title, t(".title") %>
+<%= render "layouts/header" %>
 <%= render "home_start", q: @q %>
 <%= render "popular_category" , categories: @categories %>
 <%= render "jobs_list", job_posts: @job_posts %>

@@ -57,9 +57,9 @@
     var scroll = $(window).scrollTop();
 
     if (scroll >= 80) {
-      $(".defaultscroll").addClass("scroll");
+      $("#topnav").addClass("scroll");
     } else {
-      $(".defaultscroll").removeClass("scroll");
+      $("#topnav").removeClass("scroll");
     }
   });
 })(jQuery)

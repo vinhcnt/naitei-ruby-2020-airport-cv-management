@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
-  before_action :must_logged_in
-  before_action :load_profile, only: %i(show edit update)
-  before_action :correct_user_or_recruiter
+  before_action :authenticate_user!
+  load_and_authorize_resource
+  rescue_from CanCan::AccessDenied, with: :cancan_access_denied
+  rescue_from ActiveRecord::RecordNotFound, with: :active_record_record_not_found
 
   def show; end
 
@@ -25,23 +26,18 @@ class ProfilesController < ApplicationController
 
   private
 
-  def load_profile
-    @profile = Profile.find_by id: params[:id]
-    return if @profile
+  def profile_params
+    params[:profile][:gender] = params[:profile][:gender].to_i
+    params.require(:profile).permit Profile::PROFILE_PARAMS
+  end
 
+  def cancan_access_denied
+    flash[:error] = t ".you_are_not_allow_to_do_this_action"
+    redirect_to root_url
+  end
+
+  def active_record_record_not_found
     flash[:warning] = t ".profile_not_found"
     redirect_to root_path
-  end
-
-  def correct_user_or_recruiter
-    redirect_to root_url unless (@profile&.user == current_user) || current_user&.is_recruiter?
-  end
-
-  def must_logged_in
-    redirect_to root_url unless logged_in?
-  end
-
-  def profile_params
-    params.require(:profile).permit Profile::PROFILE_PARAMS
   end
 end

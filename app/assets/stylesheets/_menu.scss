@@ -1,7 +1,7 @@
 //
 // menu.scss
 //
-#topnav {
+#topnav, #fixednav {
   position: fixed;
   right: 0;
   left: 0;
@@ -271,7 +271,7 @@
   line-height: 68px;
 }
 @media (min-width: 992px) {
-  #topnav {
+  #topnav, #fixednav {
     .navigation-menu {
       display: flex;
       justify-content: center;
@@ -429,7 +429,7 @@
 }
 
 @media (max-width: 991px) {
-  #topnav {
+  #topnav, #fixednav {
     background-color: $white;
     box-shadow: $shadow;
     min-height: 74px;
@@ -533,7 +533,7 @@
       float: left;
     }
   }
-  #topnav {
+  #topnav, #fixednav {
     .has-submenu {
       .submenu {
         .submenu-arrow {
@@ -570,7 +570,7 @@
   }
 }
 @media (max-width: 768px) {
-  #topnav {
+  #topnav, #fixednav {
     .navigation-menu {
       .has-submenu {
         .menu-arrow {
@@ -588,7 +588,7 @@
   }
 }
 @media (min-width: 768px) {
-  #topnav {
+  #topnav, #fixednav {
     .navigation-menu {
       > li {
         &.has-submenu {
@@ -620,7 +620,7 @@
   }
 }
 @media (max-width: 375px) {
-  #topnav {
+  #topnav, #fixednav {
     .buy-button {
       display: none;
     }

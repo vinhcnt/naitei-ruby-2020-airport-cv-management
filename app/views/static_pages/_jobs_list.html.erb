@@ -13,7 +13,7 @@
           <div class="tab-pane fade show active" id="recent-job" role="tabpanel" aria-labelledby="recent-job-tab">
             <div class="row">
               <div class="col-lg-12">
-                <%= render job_posts %>
+                <%= render partial: "job_posts/job_post_for_home", collection: job_posts %>
               </div>
             </div>
           </div>

@@ -1,8 +1,9 @@
 class JobApplicationsController < ApplicationController
+  before_action :authenticate_user!
   STATUS_PARAMS = %i(status).freeze
 
   def index
-    if current_user.recruiter?
+    if current_user.has_role? :recruiter
       @job_applications = JobApplication.desc_order
                                         .page(params[:page])
                                         .per Settings.job_applications.per_page
@@ -30,7 +31,7 @@ class JobApplicationsController < ApplicationController
 
   def update
     @job_application = JobApplication.find_by id: params[:id]
-    update_status if current_user.recruiter? || (current_user.eql? @job_application&.candidate)
+    update_status if current_user.has_role?(:recruiter) || current_user.eql?(@job_application&.candidate)
   end
 
   private
@@ -40,7 +41,7 @@ class JobApplicationsController < ApplicationController
   end
 
   def candidate_index
-    return unless current_user.candidate?
+    return unless current_user.has_role? :candidate
 
     @job_applications = current_user.job_applications
                                     .desc_order

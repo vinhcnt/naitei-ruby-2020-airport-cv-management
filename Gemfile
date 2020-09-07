@@ -3,7 +3,9 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.2", require: false
+gem "cancancan"
 gem "config", "~> 2.2", ">= 2.2.1"
+gem "devise"
 gem "faker", "~> 2.13.0"
 gem "figaro"
 gem "i18n-js"
@@ -14,6 +16,7 @@ gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n", "~> 6.0.0"
 gem "ransack"
+gem "rolify"
 gem "sass-rails", ">= 6"
 gem "sprockets-rails", "2.3.3"
 gem "turbolinks", "~> 5"

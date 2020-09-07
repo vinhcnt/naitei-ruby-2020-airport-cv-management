@@ -40,10 +40,10 @@
         <span class="text-danger">*</span>
       <% end %>
       <div class="form-button">
-        <%= f.select :gender, options_for_select(Profile.genders.map {|key, value| [key.humanize.capitalize, value]}),  {include_blank: t(".gender")}, {class: "nice-select rounded", required: true} %>
+        <%= f.select :gender, options_for_select(Profile.genders.map {|key, value| [key.humanize.capitalize, value]}, Profile.genders[f.object.gender] ||= 0),  {include_blank: t(".gender")}, {class: "nice-select rounded", required: true} %>
       </div>
       <div class="invalid-feedback">
-        <%= f.object.errors.full_messages_for(:gender_id).join("\n") %>
+        <%= f.object.errors.full_messages_for(:gender).join("\n") %>
       </div>
     </div>
     <div class="form-group app-label">

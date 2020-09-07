@@ -1,23 +1,23 @@
 class JobPostsController < ApplicationController
-  before_action :recruiter_user, except: %i(show index)
-  before_action :load_job_posts, only: :show
+  load_and_authorize_resource education_params: :job_post_params
+  skip_load_and_authorize_resource only: :index
+  rescue_from CanCan::AccessDenied, with: :cancan_access_denied
+  rescue_from ActiveRecord::RecordNotFound, with: :active_record_record_not_found
 
   def index
     @q = JobPost.ransack params[:q]
     @job_posts = @q.result(distinct: true).page(params[:page]).per Settings.job_posts.per_page
   end
 
-  def new
-    @job_post = JobPost.new
-  end
+  def new; end
 
   def show; end
 
   def create
-    @job_post = current_user.job_posts.build job_post_params
+    @job_post.user = current_user
     if @job_post.save
       flash[:success] = t ".success"
-      redirect_to root_path
+      redirect_to job_post_path @job_post
     else
       flash[:error] = t ".error"
       render :new
@@ -30,14 +30,12 @@ class JobPostsController < ApplicationController
     params.require(:job_post).permit JobPost::JOBPOST_PARAMS
   end
 
-  def recruiter_user
-    redirect_to root_url unless current_user.is_recruiter?
+  def cancan_access_denied
+    flash[:error] = t ".you_are_not_allow_to_do_this_action"
+    redirect_to root_url
   end
 
-  def load_job_posts
-    @job_post = JobPost.find_by id: params[:id]
-    return if @job_post
-
+  def active_record_record_not_found
     flash[:warning] = t ".job_post_not_found"
     redirect_to root_path
   end

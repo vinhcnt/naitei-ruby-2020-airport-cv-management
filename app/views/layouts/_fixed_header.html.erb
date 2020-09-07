@@ -1,0 +1,37 @@
+<header id="fixednav" class="defaultscroll scroll-active scroll">
+  <div class="container">
+    <div>
+      <%= link_to root_path, class: "logo" do %>
+        <%= image_tag "logo_light.png", class: "logo-light", height: Settings.logo_small %>
+        <%= image_tag "logo_dark.png", class: "logo-dark", height: Settings.logo_small %>
+      <% end %>
+    </div>
+    <% if current_user&.has_role? :recruiter %>
+      <div class="buy-button">
+        <%= link_to t(".post_a_job"), new_job_post_url, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    <div class="menu-extras">
+      <div class="menu-item">
+        <%= link_to Settings.empty_path, class: "navbar-toggle" do %>
+          <div class="lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div id="navigation">
+      <ul class="navigation-menu">
+        <% if current_user&.has_role? :recruiter %>
+          <li><%= link_to t(".recruiter"), job_applications_path %></li>
+        <% end %>
+        <% if current_user&.has_role? :candidate %>
+          <li><%= link_to t(".job_applications_history"), job_applications_path %></li>
+          <li><%= link_to t(".my_profile"), profile_path(current_user.profile) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</header>

@@ -8,9 +8,7 @@
   </head>
   <body>
     <%= render "layouts/preloader"%>
-    <%= render "layouts/header" %>
     <%= yield %>
-    <%= render "layouts/footer" %>
     <%= render "layouts/back_to_top" %>
     <%= javascript_pack_tag "shared/plugins" %>
     <%= javascript_pack_tag "shared/app", "data-turbolinks-track": "reload" %>
