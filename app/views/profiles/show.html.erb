@@ -1,4 +1,5 @@
 <% provide :title, "#{@profile.full_name} | #{t(".title")}"%>
+<%= render "layouts/header" %>
 <%= render "start_profile", profile: @profile %>
 <% if @profile %>
   <% if @profile.user.eql? current_user %>

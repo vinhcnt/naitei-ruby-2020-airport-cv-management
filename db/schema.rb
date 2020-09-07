@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_064444) do
+ActiveRecord::Schema.define(version: 2020_09_04_040404) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.string "title"
@@ -100,6 +100,17 @@ ActiveRecord::Schema.define(version: 2020_08_21_064444) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
   create_table "units", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -111,19 +122,30 @@ ActiveRecord::Schema.define(version: 2020_08_21_064444) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.integer "roles", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
     t.bigint "unit_id"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unit_id"], name: "index_users_on_unit_id"
+  end
+
+  create_table "users_roles", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_users_roles_on_role_id"
+    t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+    t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
   add_foreign_key "educations", "profiles"

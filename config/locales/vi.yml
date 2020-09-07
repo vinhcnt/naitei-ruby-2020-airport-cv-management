@@ -122,78 +122,83 @@ vi:
       featured_jobs: "Nổi bật"
       part_time: "Bán thời gian"
       full_time: "Toàn thời gian"
-  password_resets:
-    private:
-      user_not_found: "Không tìm thấy người dùng"
-      can_not_reset_password: "Không thể đặt lại mật khẩu"
-      password_has_been_reset: "Mật khẩu đã được đổi"
-      can_not_reset_password: "Không thể đặt lại mật khẩu"
-    new:
-      forgot_password: "Quên mật khẩu"
-      submit: "Gửi"
-      please_enter: "Hãy điền địa chỉ email. Bạn sẽ nhận được email đặt lại mật khẩu."
-      recover_account: "Đặt lại mật khẩu"
-      home: "Trang chủ"
-    create:
-      email_sent: "Đã gửi email với hướng dẫn đặt lại mật khẩu"
-      send_fail: "Không tìm thấy địa chỉ email"
-    update:
-      cant_be_empty: "Không để trống"
-    edit:
-      title: "Đặt lại mật khẩu"
-      password: "Mật khẩu"
-      password_confirmation: "Xác nhận mật khẩu"
-      submit: "Gửi"
   users:
-    new:
-      signup: "Đăng ký"
-      content: "Đây sẽ là trang đăng kí cho người dùng mới."
-      firstname: "Họ"
-      lastname: "Tên"
-      email: "Email"
-      password: "Mật khẩu"
-      password_confirmation: "Xác nhận mật khẩu"
-      create: "Tạo tài khoản"
-      i_accept: "Tôi đồng ý các điều khoản"
-      already_have_an_account: "Đã có tài khoản?"
-      sign_in: "Đăng nhập"
-      or_signup_with: "Hoặc đăng ký với"
-    show:
-      user_not_found: "Không tìm thấy người dùng"
-    create:
-      success: "Tạo tài khoản thành công"
-      error: "Có lỗi xảy ra, không thể tạo tài khoản"
-      email_sent: "Hãy kiểm tra email để kích hoạt tài khoản của bạn"
-  user_mailer:
-    account_activation:
-      account_activation: "Kích hoạt tài khoản"
-      greeting: "Chào"
-      welcome: "Chào mừng đến với Job Board. Ấn vào link dưới đây để kích hoạt tài khoản"
-      activate: "Kích hoạt"
-      password_reset: "Đặt lại mật khẩu"
-    password_reset:
-      password_reset: "Đặt lại mật khẩu"
-      click_the_link_blow: "Nhấn vào liên kết dưới đây để đặt lại mật khẩu:"
-      expire_in: "Đường đẫn sẽ hết hạn sau hai tiếng"
-      if_you_did_not_request: "Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này và mật khẩu của bạn sẽ được giữ nguyên."
-  account_activations:
-    edit:
-      account_activated: "Tài khoản đã được kích hoạt!"
-      invalid_activation_link: "Link kích hoạt không tồn tại"
-  sessions:
-    new:
-      signin: "Đăng nhập"
-      new_user: "Tạo tài khoản mới?"
-      email: "Địa chỉ email"
-      password: "Mật khẩu"
-      error_message: "Email hoặc mật khẩu không chính xác!"
-      logout: "Đã đăng xuất"
-      you_are_not_allowed: "Bạn không được phép đăng nhập"
-    create:
-      success: "Tạo tài khoản thành công"
-      error: "Có lỗi xảy ra, không thể tạo tài khoản"
-      email: "Email"
-      password: "Mật khẩu"
+    confirmations:
+      new:
+        resend: "Gửi lại hướng dẫn xác nhận"
+    mailer:
+      confirmation_instructions:
+        welcome: "Chào mừng"
+        confirm: "Bạn có thể xác nhận email tài khoản của mình thông qua liên kết bên dưới:"
+        confirm_my_account: "Xác nhận tài khoản của tôi"
+      email_changed:
+        hello: "Xin chào"
+        from_email: "Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đang được thay đổi thành"
+        to_email: "Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đã được thay đổi thành"
+      password_change:
+        hello: "Xin chào"
+        password_changed: "Chúng tôi đang liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi."
+      reset_password_instructions:
+        hello: "Xin chào"
+        someone_change: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể làm điều này thông qua liên kết dưới đây."
+        change_my_password: "Thay đổi mật khẩu của tôi"
+        if_not_you: "Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này."
+        until_you: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và tạo một mật khẩu mới."
+      unlock_instructions:
+        hello: "Xin chào"
+        account_locked: "Tài khoản của bạn đã bị khóa do có quá nhiều lần đăng nhập không thành công."
+        click_below: "Nhấp vào liên kết bên dưới để mở khóa tài khoản của bạn:"
+        unlock_my_account: "Mở khóa tài khoản của tôi"
+    passwords:
+      edit:
+        title: "Đổi mật khẩu"
+        change_your_password: "Đổi mật khẩu"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        confirmation: "Xác nhận"
+      new:
+        title: "Quên mật khẩu"
+        forgot_your_password: "Quên mật khẩu?"
+        email: "Email"
+        send_me: "Gửi cho tôi"
+    registrations:
+      edit:
+        title: "Chỉnh sửa tài khoản"
+        edit: "Sửa"
+        email: "Email"
+        current: "Hiện đang chờ xác nhận cho:"
+        leave_blank: "(để trống nếu bạn không muốn thay đổi nó)"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        current_password: "Mật khẩu hiện tại"
+        update: "Cập nhật"
+        cancel_my_account: "Xóa tài khoản"
+        back: "Trở về"
+      new:
+        first_name: "Họ"
+        last_name: "Tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        signup: "Đăng ký"
+    sessions:
+      new:
+        title: "Đăng nhập"
+        email: "Email"
+        password: "Mật khẩu"
+        remember_me: "Lưu đăng nhập"
+        login: "Đăng nhập"
+    shared:
+      links:
+        login: "Đăng nhập"
+        signup: "Đăng ký"
+        forgot_your_password: "Quên mật khẩu?"
+        didnt_receive_confirmation_instructions: "Không nhận được hướng dẫn xác nhận?"
+        didnt_receive_unlock_instructions: "Không nhận được hướng dẫn mở khóa?"
+    unlocks:
+      new:
+        email: "Email"
+        resend: "Gửi lại hướng dẫn mở khóa"
   profiles:
     educations:
       education: "Học vấn"

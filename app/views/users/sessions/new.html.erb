@@ -1,0 +1,58 @@
+<% provide :title, t(".title") %>
+<section class="vh-100">
+  <div class="home-center">
+    <div class="home-desc-center">
+      <div class="container">
+        <div class="row justify-content-center mt-4 mb-4">
+          <div class="col-md-6">
+            <div class="login_page bg-white shadow rounded p-4">
+              <div class="text-center">
+                <h4 class="mb-4"><%= t ".title" %></h4>
+              </div>
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="row mb-2">
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= f.label :email do %>
+                        <%= t ".email" %><span class="text-danger"> *</span>
+                      <% end %>
+                      <%= f.email_field :email, class: "form-control", required: true, autocomplete: "email" %>
+                      <div class="invalid-feedback" >
+                        <%= f.object.errors.full_messages_for(:email).join("\n") %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group position-relative">
+                      <%= f.label :password do %>
+                        <%= t ".password" %><span class="text-danger"> *</span>
+                      <% end %>
+                      <%= f.password_field :password, class: "form-control", required: true, autocomplete: "password" %>
+                      <div class="invalid-feedback" style="display: block;">
+                        <%= f.object.errors.full_messages_for(:password).join("\n") %>
+                      </div>
+                    </div>
+                  </div>
+                  <% if devise_mapping.rememberable? %>
+                    <div class="col-md-12">
+                      <div class="form-group position-relative">
+                        <%= f.label :remember_me, class: "checkbox inline" do %>
+                          <%= f.check_box :remember_me %>
+                          <span><%= t ".remember_me" %></span>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+                  <div class="col-md-12">
+                    <%= f.submit t(".login"), class: "btn btn-primary w-100" %>
+                  </div>
+                </div>
+              <% end %>
+              <%= render "users/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

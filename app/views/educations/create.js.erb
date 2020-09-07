@@ -1,5 +1,5 @@
 <% if @education.errors.blank? %>
-  $("#educations_details").html("<%= j render @profile.educations %>");
+  $("#educations_details").html("<%= j render current_user.profile.educations %>");
   $("#educationModal").modal("hide")
   $("#educationForm").html("<%= j render "profiles/education_form", education: @new_education %>")
 <% else %>

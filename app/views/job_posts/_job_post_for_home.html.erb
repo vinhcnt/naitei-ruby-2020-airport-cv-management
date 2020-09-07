@@ -1,0 +1,44 @@
+<div class="job-box bg-white overflow-hidden border rounded mt-4 position-relative overflow-hidden">
+  <div class="p-4">
+    <div class="row align-items-center">
+      <div class="col-md-2">
+        <div class="mo-mb-2">
+          <img src="<%= Settings.url.placeholder.job %>" alt="" class="img-fluid mx-auto d-block">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <h5><%= link_to job_post_for_home.title, job_post_path(job_post_for_home), class: "text-dark" %></h5>
+          <p class="text-muted mb-0"><%= job_post_for_home.unit_name %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <p class="text-muted mb-0"><i class="fas fa-map-marker text-primary mr-2"></i><%= job_post_for_home.location %></p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div>
+          <p class="text-muted mb-0 mo-mb-2"><span class="text-primary">$</span><%= job_post_for_home.salary_from %>-<%= job_post_for_home.salary_to %>/m</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-3 bg-light">
+    <div class="row">
+      <div class="col-md-4">
+        <div>
+          <p class="text-muted mb-0 mo-mb-2"><span class="text-dark"></span></p>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <p class="text-muted mb-0 mo-mb-2"><span class="text-dark"><%= t ".note" %></span><%= job_post_for_home.note %></p>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <%= link_to t(".see_more_details"), job_post_path(job_post_for_home), class: "text-dark float-right" %>
+      </div>
+    </div>
+  </div>
+</div>
