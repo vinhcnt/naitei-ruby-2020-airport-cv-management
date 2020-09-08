@@ -52,7 +52,7 @@
     <div id="navigation">
       <ul class="navigation-menu">
         <% if current_user&.has_role? :recruiter %>
-          <li><%= link_to t(".recruiter"), job_applications_path %></li>
+          <li><%= link_to t(".recruiters_control_page"), recruiters_job_applications_path %></li>
         <% end %>
         <% if current_user&.has_role? :candidate %>
           <li><%= link_to t(".job_applications_history"), job_applications_path %></li>

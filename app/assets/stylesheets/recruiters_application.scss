@@ -4,12 +4,4 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/solid';
 @import '@fortawesome/fontawesome-free/scss/brands';
 
-@import 'bootstrap/scss/bootstrap';
-@import 'toastr/toastr.scss';
-
-@import './style.scss';
-
-@import 'selectize/dist/css/selectize.css';
-@import 'jquery-nice-select/css/nice-select.css';
-@import 'bootstrap-datepicker/dist/css/bootstrap-datepicker3.css';
-
+@import 'admin-lte/dist/css/adminlte.min.css';

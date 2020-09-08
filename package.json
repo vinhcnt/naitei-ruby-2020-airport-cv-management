@@ -7,6 +7,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^4.3.0",
+    "admin-lte": "^3.0",
     "bootstrap": "4.3.1",
     "bootstrap-datepicker": "^1.9.0",
     "i18n-js": "^3.7.1",

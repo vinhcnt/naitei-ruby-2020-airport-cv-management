@@ -5,6 +5,7 @@ require('turbolinks').start()
 require('@rails/activestorage').start()
 require('channels')
 require('bootstrap')
+require('admin-lte')
 require('@fortawesome/fontawesome-free')
 import 'bootstrap-datepicker'
 global.I18n = require('i18n-js')
