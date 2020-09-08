@@ -8,21 +8,45 @@ class Recruiters::JobPostsController < ApplicationController
 
   def index
     @q = JobPost.ransack params[:q]
-    @job_posts = @q.result(distinct: true).page(params[:page]).per Settings.job_posts.per_page
+    @job_posts = @q.result(distinct: true).desc_order.page(params[:page]).per Settings.job_posts.per_page
   end
 
   def new; end
 
   def show; end
 
+  def edit
+    @job_post = JobPost.find_by id: params[:id]
+  end
+
   def create
     @job_post.user = current_user
     if @job_post.save
       flash[:success] = t ".success"
-      redirect_to job_post_path @job_post
+      redirect_to recruiters_job_post_path @job_post
     else
-      flash[:error] = t ".error"
+      flash.now[:error] = t ".error"
       render :new
+    end
+  end
+
+  def update
+    if @job_post.update job_post_params
+      flash[:success] = t ".success"
+      redirect_to recruiters_job_post_path @job_post
+    else
+      flash[:danger] = t ".error"
+      render :edit
+    end
+  end
+
+  def destroy
+    @job_post = JobPost.find_by id: params[:id]
+    if @job_post.destroy
+      flash[:success] = t ".success"
+      redirect_to recruiters_job_posts_path
+    else
+      flash[:danger] = t ".error"
     end
   end
 
@@ -33,19 +57,19 @@ class Recruiters::JobPostsController < ApplicationController
   end
 
   def cancan_access_denied
-    flash[:error] = t ".you_are_not_allow_to_do_this_action"
+    flash[:error] = t "shared.you_are_not_allow_to_do_this_action"
     redirect_to root_url
   end
 
   def active_record_record_not_found
-    flash[:warning] = t ".job_post_not_found"
+    flash[:warning] = t "shared.job_post_not_found"
     redirect_to root_path
   end
 
   def must_be_a_recruiter
     return if current_user&.has_role? :recruiter
 
-    flash[:error] = t ".you_are_not_allow_to_do_this_action"
+    flash[:error] = t "shared.you_are_not_allow_to_do_this_action"
     redirect_to root_path
   end
 end

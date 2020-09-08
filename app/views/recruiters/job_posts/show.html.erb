@@ -1,0 +1,74 @@
+<% provide :title, t(".title") %>
+<div class="content-wrapper" style="min-height: 1419.6px;">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1><%= @job_post.title %></h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><%= link_to t(".home"), root_path %></li>
+            <li class="breadcrumb-item active"><%= t ".job_post_detail"%></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <section class="content">
+    <!-- Default box -->
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+            <div class="row">
+              <div class="col-12">
+                <h5><%= t ".salary" %></h5>
+                <div class="post">
+                  <p>$<%= @job_post.salary_from %> - $<%= @job_post.salary_to %> <%= t ".per_month" %></p>
+                </div>
+                <h5><%= t ".job_description" %></h5>
+                <div class="post">
+                  <p><%= @job_post.description %></p>
+                </div>
+                <h5><%= t ".job_requirement" %></h5>
+                <div class="post clearfix">
+                  <p><%= @job_post.requirement %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+            <br>
+            <div class="text-muted">
+              <p class="text-sm">
+                <%= t ".category"%>
+                <b class="d-block"><%= @job_post.category_title %></b>
+              </p>
+              <p class="text-sm">
+                <%= t ".address"%>
+                <b class="d-block"><%= @job_post.location %></b>
+              </p>
+              <p class="text-sm">
+                <%= t ".date"%>
+                <b class="d-block"><%= l(@job_post.created_at, format: :long) %></b>
+              </p>
+            </div>
+            <div class="text-center mt-5 mb-3">
+              <%= link_to edit_recruiters_job_post_path(@job_post), class:"btn btn-info" do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to new_recruiters_job_post_path, class:"btn btn-danger" do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </section>
+</div>
