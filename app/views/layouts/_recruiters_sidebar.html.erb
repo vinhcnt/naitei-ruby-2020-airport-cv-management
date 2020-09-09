@@ -1,0 +1,27 @@
+<aside class="main-sidebar elevation-1 sidebar-light-primary sidebar-no-expand">
+  <%= link_to root_path, class: "brand-link text-center" do %>
+    <span class="brand-text font-weight-light">Airport</span>
+  <% end %>
+  <div class="sidebar">
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to recruiters_job_applications_path, class: "nav-link active" do %>
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              <%= t ".job_applications" %>
+            </p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to recruiters_job_posts_path, class: "nav-link" do %>
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              <%= t ".job_posts" %>
+            </p>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

@@ -1,0 +1,53 @@
+<% provide :title, t(".title") %>
+<div class="content-wrapper" style="min-height: 926px;">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1><%= t ".job_applications" %></h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><%= t ".recent_job_applications" %></h3>
+            <div class="card-tools">
+              <div class="input-group input-group-sm">
+                <%= search_form_for [:recruiters,@q], class: "form-inline" do |f| %>
+                  <div class="row">
+                    <div class="input-group-append">
+                      <%= f.select :status_eq, JobApplication.statuses.to_a.map { |k, v| [k,v ]},
+                         {include_blank: t(".status")}, class: "form-control custom-select" %>
+                    </div>
+                    <div class="input-group-append">
+                      <%= f.submit t(".search"), class: "btn btn-primary" %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render @job_applications %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

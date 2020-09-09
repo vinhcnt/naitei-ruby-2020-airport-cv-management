@@ -306,3 +306,10 @@ vi:
       error: "Xóa bị lỗi"
     experience:
       delete: "Xóa"
+  recruiters:
+    job_applications:
+      index:
+        title: "Recruiter"
+        search: "Search"
+      job_application:
+        sure: "Bạn có chắc muốn thay đổi?"

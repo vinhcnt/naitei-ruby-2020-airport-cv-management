@@ -30,10 +30,10 @@
             <div class="job-list-button-sm text-right">
               <% if job_application.reviewing?  %>
                 <%= form_tag job_application_path(job_application), remote: true, method: :patch, id: "form_for_#{job_application.id}" do |f| %>
-                <%= hidden_field :job_application, :status, value: Settings.status.cancel %>
-                <%= submit_tag t(".cancel"), class: "btn  btn-sm btn-danger-outline text-danger mt-2", data: { confirm: t(".sure")} %>
+                  <%= hidden_field :job_application, :status, value: Settings.status.cancel %>
+                  <%= submit_tag t(".cancel"), class: "btn  btn-sm btn-danger-outline text-danger mt-2", data: { confirm: t(".sure")} %>
+                <% end %>
               <% end %>
-            <% end %>
             </div>
           </div>
         <% end %>
