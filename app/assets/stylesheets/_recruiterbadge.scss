@@ -1,0 +1,57 @@
+//Badges
+.badge {
+    padding: 5px 8px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    &.badge-primary,
+    &.badge-secondary,
+    &.badge-success,
+    &.badge-danger,
+    &.badge-info,
+    &.badge-warning,
+    &.badge-interviewing,
+    &.badge-accepted,
+    &.badge-cancelled,
+    &.badge-reviewing,
+    &.badge-denied,
+    &.badge-dark {
+      color: $white !important;
+    }
+    &.badge-primary, &.badge-interviewing {
+      background-color: $primary !important;
+    }
+    &.badge-secondary, &.badge-denied {
+      background-color: $secondary !important;
+    }
+    &.badge-success, &.badge-accepted {
+      background-color: $success !important;
+    }
+    &.badge-danger, &.badge-cancelled {
+      background-color: $danger !important;
+    }
+    &.badge-warning {
+      background-color: $warning !important;
+    }
+    &.badge-info {
+      background-color: $info !important;
+    }
+    &.badge-light {
+      color: $dark;
+      background-color: $light !important;
+    }
+    &.badge-dark {
+      background-color: $dark !important;
+    }
+    &.badge-reviewing {
+      background-color: $reviewing !important;
+    }
+  }
+
+
+th {
+  text-align: center;
+}
+
+.td-action{
+  text-align: center;
+}

@@ -372,7 +372,7 @@ button:not(:disabled) {
   &.badge-primary, &.badge-interviewing {
     background-color: $primary !important;
   }
-  &.badge-secondary {
+  &.badge-secondary, &.badge-denied {
     background-color: $secondary !important;
   }
   &.badge-success, &.badge-accepted {
@@ -391,7 +391,7 @@ button:not(:disabled) {
     color: $dark;
     background-color: $light !important;
   }
-  &.badge-dark, &.badge-dinied {
+  &.badge-dark {
     background-color: $dark !important;
   }
   &.badge-reviewing {

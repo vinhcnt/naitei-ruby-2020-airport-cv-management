@@ -306,3 +306,10 @@ en:
       error: "Delete fail"
     experience:
       delete: "Delete"
+  recruiters:
+    job_applications:
+      index:
+        title: "Recruiter"
+        search: "Search"
+      job_application:
+        sure: "Are you sure?"

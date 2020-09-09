@@ -1,0 +1,8 @@
+<% flash.each_with_object([]) do |(type, message), flash_messages| %>
+  toastr.<%= type %>('<%= message %>')
+<% end %>
+<% if @job_application.errors.blank? %>
+  $('#status_for_<%= @job_application.id %>')
+    .attr("class", "ml-2 badge badge-<%= @job_application.status %>")
+    .html('<%= @job_application.status %>');
+<% end %>

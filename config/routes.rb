@@ -12,5 +12,10 @@ Rails.application.routes.draw do
     resources :educations, only: %i(create update destroy)
     resources :experiences, only: %i(create update destroy)
     devise_for :users
+
+    namespace :recruiters do
+      resources :job_applications, only: %i(index create update)
+      resources :job_posts, except: %i(destroy update edit)
+    end
   end
 end
