@@ -32,7 +32,7 @@ class Ability
   def recruiter_ability _user
     can :manage, JobPost
     can :read, [User, Profile, Education, Experience]
-    can :manage, JobApplication
+    can [:read, :update], JobApplication
   end
 
   def create_job_application_ability job_application, user

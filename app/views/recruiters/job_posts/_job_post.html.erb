@@ -1,0 +1,15 @@
+<tr id="job_post_item_<%= job_post.id %>">
+  <td><%= link_to job_post.title, recruiters_job_post_path(job_post), class: "text-dark" %></td>
+  <td><%= job_post.category_title %></td>
+  <td><%= l(job_post.created_at, format: :long) %></td>
+  <td class="text-right py-0 align-middle">
+    <%= form_tag recruiters_job_post_path(job_post), remote: true, method: :patch do |f| %>
+      <%= link_to edit_recruiters_job_post_path(job_post), class:"btn btn-info" do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+      <%= link_to recruiters_job_post_path(job_post), class:"btn btn-danger", data: { confirm: t(".sure")}, method: :delete do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

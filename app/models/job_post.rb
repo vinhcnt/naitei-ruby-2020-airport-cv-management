@@ -10,6 +10,8 @@ class JobPost < ApplicationRecord
   delegate :title, :id, to: :job_application_status, prefix: true, allow_nil: true
   delegate :id, to: :job_post, prefix: true, allow_nil: true
 
+  acts_as_paranoid
+
   validates :user_id, presence: true
   validates :title, presence: true,
     length: {minimum: Settings.validations.job_post.title_min,
@@ -26,9 +28,6 @@ class JobPost < ApplicationRecord
   validates :requirement, presence: true,
     length: {minimum: Settings.validations.job_post.content_min,
              maximum: Settings.validations.job_post.content_max}
-  validates :note, allow_nil: true,
-    length: {minimum: Settings.validations.job_post.content_min,
-             maximum: Settings.validations.job_post.content_max}
-
   scope :home_recent_jobs, ->{order(created_at: :desc).limit Settings.job}
+  scope :desc_order, ->{order created_at: :desc}
 end

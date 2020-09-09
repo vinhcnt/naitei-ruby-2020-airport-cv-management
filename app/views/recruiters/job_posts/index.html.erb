@@ -1,0 +1,56 @@
+<% provide :title, t(".title") %>
+<div class="content-wrapper" style="min-height: 100vh;">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2 list-inline-item">
+        <div class="col-sm-6">
+          <h1><%= link_to t(".post_a_job"), new_recruiters_job_post_path, class: "btn btn-primary" %></h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <% if @q.result %>
+              <div class="float-left"> <%= pluralize @q.result.size, t(".result") %></div>
+            <% end %>
+            <div class="card-tools">
+              <%= search_form_for [:recruiters, @q], html: {class: "input-group input-group-sm"} do |f| %>
+                <div class="input-group-append">
+                  <%= f.select :category_id_eq, Category.all.collect {|c| [c.title, c.id]},
+                         {include_blank: t(".category")}, class: "form-control custom-select" %>
+                  <%= f.search_field :title_cont, class: "form-control float-right", placeholder: t(".search_by_title") %>
+                  <%= f.submit t(".search"), class: "btn btn-default" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr>
+                  <th><%= t ".job_post_title" %></th>
+                  <th><%= t ".category" %></th>
+                  <th><%= t ".date" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render @job_posts %>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer p-0">
+            <div class="mailbox-controls">
+              <div class="float-right p-2">
+                <%= paginate @job_posts %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

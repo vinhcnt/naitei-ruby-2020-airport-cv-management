@@ -6,7 +6,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <%= link_to recruiters_job_applications_path, class: "nav-link active" do %>
+          <%= link_to recruiters_job_applications_path, class: "nav-link #{current_page?(controller: "job_applications", action: "index") && "active"}" do %>
             <i class="nav-icon fas fa-th"></i>
             <p>
               <%= t ".job_applications" %>
@@ -14,7 +14,7 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to recruiters_job_posts_path, class: "nav-link" do %>
+          <%= link_to recruiters_job_posts_path, class: "nav-link #{current_page?(controller: "job_posts", action: "index") && "active"}" do %>
             <i class="nav-icon fas fa-th"></i>
             <p>
               <%= t ".job_posts" %>
