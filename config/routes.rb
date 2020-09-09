@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     namespace :recruiters do
       resources :job_applications, only: %i(index create update)
       resources :job_posts, except: %i(destroy update edit)
+      resources :notifications, only: :index
     end
   end
+  mount ActionCable.server => '/cable'
 end

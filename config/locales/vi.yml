@@ -204,6 +204,13 @@ vi:
       new:
         email: "Email"
         resend: "Gửi lại hướng dẫn mở khóa"
+  recruiters:
+    notifications:
+      notification:
+        had_cancelled: "đã hủy"
+        had_apply: "đã đăng ký"
+      index:
+        title: "Thông báo"
   profiles:
     educations:
       education: "Học vấn"

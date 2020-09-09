@@ -8,7 +8,7 @@ class JobApplicationsController < ApplicationController
   def index
     if current_user.has_role? :recruiter
       redirect_to recruiters_job_applications_path
-      return 
+      return
     else
       candidate_index
     end

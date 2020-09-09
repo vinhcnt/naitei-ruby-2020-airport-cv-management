@@ -204,6 +204,13 @@ en:
       new:
         email: "Email"
         resend: "Resend unlock instructions"
+  recruiters:
+    notifications:
+      notification:
+        had_cancelled: "had cancelled"
+        had_apply: "had apply"
+      index:
+        title: "Notifications"
   profiles:
     educations:
       educations: "Educations"
